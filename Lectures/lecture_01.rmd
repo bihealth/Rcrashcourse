@@ -81,7 +81,6 @@ To view the lectures, download the HTML file and open it in a browser.
  * vectors and multiple assignment
  * operators
  * functions
- * creating functions
 
 ## Excercises 1
 
@@ -115,6 +114,11 @@ much area as the previous day. On the first day, the water lilies cover
 
 ## Literate programming
 
+![Donald E. Knuth](images/knuth.jpg)
+
+
+## Literate programming
+
 I believe that the time is ripe for significantly better documentation
 of programs, and that we can best achieve this by considering
 programs to be works of literature. Hence, my title: “Literate
@@ -138,11 +142,88 @@ have been introduced in an order that is best for human
 understanding, using a mixture of formal and informal methods that
 reinforce each other.
 
+(Donald E. Knuth)
+
+## Documenting your code
+
+ * Better a lousy documentation than none at all
+ * Use spaces, empty lines, comments to structure your code
+ * COMMENT, COMMENT, COMMENT
+ * Document in plain text files and source code files
+
+## Writing code
+
+Keep your code clean:
+
+ * be consistent!
+ * use meaningful variable and function names
+ * don't use shorthands
+ * refactorize
+ * create distinct code chunks
+ * split the code into meaningful scripts
+ * use a formatting style and stick to it
+
+E.g.
+http://web.stanford.edu/class/cs109l/unrestricted/resources/google-style.html
+
+## Simplify!
+
+ * make your code as simple as possible
+ * make your functions versatile and simple
+ * use simple data types if possible
+ * don't overdo it!
+
+## You never know
+
+ * what your code evolves into
+ * when you will need to publish it
+ * when someone will want to see it
+
+…so prepare in advance!
+ 
+# More R
  
 ## Matrices and data frames
 
  Caveats:
-     * data frames turn strings to factors, which may have really
-       disastrous consequences, use `stringsAsFactors=FALSE`
-     * small typos can turn a numeric vector into a string
-     * factors are dangerous to work with, use them cautiously
+
+  * data frames turn strings to factors, which may have really
+    disastrous consequences, use `stringsAsFactors=FALSE`
+  * small typos can turn a numeric vector into a string
+  * factors are dangerous to work with, use them cautiously
+
+  Gory details: matrices are a basic data type. Data frames are a list.
+
+
+
+## Excercise 2
+
+ * Create a 5x3 matrix with random numbers. Use `matrix` and `rnorm`.
+ * Turn the matrix into a data frame. Use `as.data.frame` for that.
+ * Add column and row names.
+ * Add a column. Each value in the column should be "A" (a string). Use the
+   `rep` function for that.
+ * Add a column with numbers 1 to 5. Use the `seq` function for that.
+
+
+
+## Functions
+
+ * If you have to write something more than twice, you should turn it into
+   a function!
+ * R is a *functional* language
+
+## Creating a function
+
+```
+#' Function name
+#' Function description
+some_name <- function(param1, param2=2) {
+
+## code comment
+<your code goes in here>
+
+}
+
+
+```

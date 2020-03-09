@@ -167,7 +167,6 @@ slide:not(.current) .plotly.html-widget{
 <li>vectors and multiple assignment</li>
 <li>operators</li>
 <li>functions</li>
-<li>creating functions</li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Excercises 1</h2></hgroup><article  id="excercises-1">
@@ -201,19 +200,109 @@ slide:not(.current) .plotly.html-widget{
 
 </article></slide><slide class=""><hgroup><h2>Literate programming</h2></hgroup><article  id="literate-programming">
 
+<img src='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUSEhIWFhUXGBcXGBUWFRcXGhUXFRcYFxUVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGhAQGi0lHiUtLS8tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAQoAvgMBIgACEQEDEQH/xAAcAAACAwEBAQEAAAAAAAAAAAAEBQECAwYABwj/xAA8EAABAwIEAwUHAwMDBAMAAAABAAIRAyEEEjFBBVFhEyJxgZEGMqGxwdHwUuHxI0JiFDNyB4KSsiRD4v/EABkBAAMBAQEAAAAAAAAAAAAAAAECAwAEBf/EACQRAAICAgICAgMBAQAAAAAAAAABAhEDIRIxIkEEURMyYYEj/9oADAMBAAIRAxEAPwD5q1bNVGhaBAY8rgKoV0QHoUFSvFAJUFeJVSVUuWCWLlLVQBbUW2LjoPiToPmfJAxAKsva3+30VuzPJEBk4L0K2VVciYqVUhXVSgYoApUrwCwShVStCFBasYyJUBeLV4BEBYhZPRBFli4LACg1WIWmVQQsYqFZQQvLGPKCVKgrGKFRl/PJaRtCPwVPvAlsgAkRNyNPO4QYyB8HR1ka2v4bpm3hByX7suBjoA7T/wAkfgsGxvu76g3BnQEHz9U+oYEk94QAI8rafFTcqKRhYgwvDmAXaHHUeeohVxuGkWbfX9o5Lpf9K1tgP4WFanM8tPXT4qLyF1hOUxWEtpp/P1S9+H2jqurrUzy1QNbDA7fnJZZqM/jHOGkqhlpTevhAPDkgq1PnCrHJZCWNoBcvBWdqoJVUyb0RCsQqgqxciKDuCjKtCrBqxigVIWxaoDUQBsKpC0IVSsYo4KoarqYWMUyqWU5MKy2wTZd+aboMKDsJhAIOvnHjGgTKnTEnKIBGjTYyeWo0iUOaWUDKI3mJnz1Tr2awPaOiO6LnpOw8foozlXZ0QhfQZwjhrS3MWjWR9+ietww1v+bI2jRA26aLTslxym2d8caihTUobx+dELVw8X3OydPw9kPVopLZWkc/Xw/PyCWV8Oukr0UqxNKFrBQjrDYpdiMJdN8Yz5oN7bap4yolOFoRYmkRqPD+UO8gA2T6rTzN5n5+fNc/VEEiF1wkcGSNGYUqF6VayNFgFMqsrwKKAy6kBZ51YOTAD3BUIV1UrGKKwUwoKBiCt8A0l4A1JgfeN0OUfwOsG1Rz67dUH0FdnT4XBGzYzeDQGjz3XWcGwQpsgCJuY5rHsIa1t5MSY56+Sb4ULgzP0elgj7CKbLK8dFqwKHg8rKaRawepTQVVuyYuCwrMWaGTE+JbZKsW3mn+IZYpTiGKbGOexgsl7ymfEhGn5KWu0mEUAHDCCRsb+aUYqkHTzE/wU8P3/Pzml9aleRv+y6sbOLNHYiIVUTjWQ6EKV1I4yVBK8oJRARK1YsoW1NEDGUKIVpUhMKVyqpC1VSFgmJCpSeWuDhsQVsQqhqBj7FhnZmUnT/aCfEiybYRo+yR8CrB+FoEfpj/xMJ7hTovNzfueph/QMaF54UB35Kze/wAFkxyAsMQrh14XnslAYAq6FKMdIGqdYinulHETYnaEjQ9nP4nvAixSmo2LBM8UZv8Asllc/n3WSFspm7vWfz5LIR8AfgdPNaE72QVKp2khlmC2YbxqAdxO/RWh0QyrYLxRgqEGncizvz1SV2sLqP8AThjYboLJBxWlFSeYB+n0VsWS3RHNgUY8kDSoXl5XOQkLRqzC0YmQGMVIKrKsEwpaVRz1dZuasYoHLVqzyq4QCfRvYLEl9BzJ/wBt1ugcP/yfVddRXy32J4qKNfK4wyoMp6OkZSfl5r6S05iGh0AifPSFxfIj5Wd/xp+I2pNbpOy9UojVLuxrtuyHen1KgcTcLPplp8yFNR0W5bC3Urq8hoQVPHh1gsOIYgsYSfJah9mfEcYG3PkkL+0qnMAGs/U6QP8AtBifl4qMLicz3F4DiNGuJgeQ949FTi5rmiazTpIkC2hIa3XLcBpdpJ6SnjGyc5VtgNelTJytcHu5NIJ56C6X8Qw76cZ2OaDYFzS0E6wCRc7qmFNZ9Mkk+vSdQNQbKKmEkGk6RnEE89xt4IOKT2a7VoVOLq/daYpgw5wtnI/saeXN3kOYb4VgyENAGWwHSNPgr1MO1jGtaAGgAAcoQ9B0SkUt0guGr9g1NwdnEHWPHqk/GXS9o5NHxkpySA4c3Db0XL47HNdWeAbgx6WVcK8hfkv/AJpFSFCiV4ldR55K8HKoKkBFAYyVgV4KpTCmgcvZlQKCVjGgKhxXmhVeVjFS9fR+DcbOehQDRmewEuk3c5ma06E6HqCvmhXY8Awrq9ClVo3rYZxBaNXMDu0YQN4zOH8KWRWWxOmdi41XNqG4e2SARJdfQDkBtqUo4dxCu7NmBhpIFokTDT0JF4Gi7SrSaTJGsfwsnYIO90R1mT5nZc6lqju4pysQ4g9mwVg8znZTLYH97g0GNyC4GQZjVa+02Cqmm49s9zonJFMNnlAbMeJTyrgKeUNLQcrmuB5FpDvm0fBC8dqd0xySzY8VbOB4Fjcz4i5sRvG9/wA0K7DsWxAaBba3qudwDWtdcgGZ8101FhcJkEDcXlDn9DcWtCvEYcCwE/FCswVw83I2+Un7J1Ww+v58EqrVXNMFTcg8LEfEacBK6btU54mQ4SNUjbqUIhZbK3KXf3Aa8rkyvmQqnNm3JJPmu09oOLCnSLG++6W+AO64ZdmCOmzg+VJWkvQ+wtbMFuluANtUxaVRPdEXDVlgFdoVQFoFREmHAqCvKAUQFwFOVeC8XLGKlyzc5Q96xc5Cwo0zLpv+nGNyY1rJtUa5pHMgFzfkfVcg4orhONNGtSq/oe1x8Ae8PSUk1aaKQdSTP0W0zurxa5sEPh6oIBBkbdQVhxXEQwriT0eko2zGlxDtXVGt91hDfEkT9kFxjDvyEr3AGDsQf1EunxJWnEaVV7SA8CRvM6clqtFrUXo4hldjHOdUIGwnY9FfhOLqdrnpOhh1adHeA2PVF1fZmO+52b5DwV2UA23JLVB5aOio1g9sjwjl0KW8RpiEuw+KLHEtPlsfFHCp2zC5siO6R1gGQd9QgwWcvjakGEu5lF8Sb3oQlUw1BCs5H2kvf/L7rniE/wDaDRviUhaLrvxfqeXn/cOwmkI5kyQFlRpwL/hRPZwQeaST9lox9GtJwPiNlqULNyRryWzHEiYVYzVbITxO9BjnKoeqPKoE9kgkPXiVFMK5CIAV4WcIssWbgloazEhVbTJMBGUMKXXNm6yscRTczO0xBbLXDTnqklKi2PE5H1b/AKecXL8OKTjL6Qy+LP7D5e75DmmftLWPZwCRmIBI/tBIBPkCSvk3spxd9E0azLnPkc39bXGHD6jqAvt9NjarQbEESD0K48ipnowaVFcO1jGtY2AGiAOgVa2Lp6Zh81elRbdpAMcwha3C6Myad+gRVGVewHinGaTGkZgSuSxPE61QkUqVv1OsPFdfWwTGwW0h53+CCxFAm1o5BF0P4+hLgsAYmo7MeQs301Pmus4RTaMPYbmUrNIAQtsJiYpvb1JU7A1o5XjP+6UnrukwmXFKtyUsYEED2ct7T2LB/wAj8kmwjJeE09p6k1I5D5rPgdDVx/ANV2R1jPPmuWYOp0ZCIq0wMoPKNN1bAUSekn53WmLbcnlspy7o6I9WAvpgSQOd56clrwt7uzEA+YGiwxT8tNx5iPX+UwjMGxJGUHu9UfQKTZkQoDVcKYXUcBemryswoLkRS1RyzIhjqhFhz3KmjTL3tYNzHgujxvDmCiabRaPPxU5zovhx8mLsO/tKU7FsfBJ3YkuovYdWW8tj6LTheIc0mifKeao6jlqVm82fEH91BnoQZPsnTz9k2/8AuT4QJv6L6/wTHdl3HE5T7pPM6+AXyn/p2zM9wO0meVoXd/6sts4ePh0S5FbEg3xR3tKoCZWjmr5pjPbMUHQQXN6HvN8J1XYez3tEzEU8w2sbRG9xsk4tDcldDV1Bu4J8Tb0SniDdYsjMXjw0LnsfxulJAcDGwMrMopHsRVhsk3XN43jOUwOqLrvfVs2w57pNxHChjg3c3KWgNmb6uZXLCGkrbA4aTC24wIYRG2qKQOkfNeMPl5PMpzhMNlptYNTr56pSwdpiQBpP/rc/JdKKZv2fmdbrpk6SRxY1yk2FYenAHT580Hih3jcRp4InCPMkOEH57Kldoj3Yk+vVRV2dMqrQp4hhS9zaYsXEDoAJJPwTCnQLO6NAIknkhcZWy1GGdJ+MBNO2add1TdC40m2wCVEryqSug88vmXgC4gASTYBZEpt7PUB2ge46TA57Sg5Ugxg5OieHYfs6rQ/3r328AdyujrVRBnlMIHGszQYvMjqOUc0vxdapoDEWjmPFQlGUnZ1wyRgqoRceouY4V2juh1zyIMgEbLfM1z84dIdTcfA2KacQwE0nge7UZmgmctRmvqPkkPDGd2k46w9seR19FlTRVXFhvsFUDX1CTA5kxK7CpVLiTDSCOc/svn3AmDO9p0M6K/CsNW/1JbSqPaxpzOM2g6DKbSfumdbsSnqhlXwxc8ucIaCba3G614Bx84SsKonsnHLUb/idHjq038yvcYxF8jR439ViRT7LLueeohKnfY2SNPXZ9ertp1GZm5SHCQRcGdCCuPpcMy1e8LSuV9nPaapgTkfL8MTpvT6t6dF9AoY+liGCrRcHDmNR0I2UpwaKY5phWHY1uy5jjsGtI5JnWxpzZQheIUMpzHff6pEUZTh7O9G+/wBAkXt5xQUmdm0993wahT7SCh2hPecfdH1Pgubw2GqYuqalQmDcnn4K8IVtnLly34x7Pey2Dc+qHQct+91XbswgDe5Aj8KBwpaxzWNtAsOXK22hTV+KaBcj86JMsm5aKYcajEXMwxzExE2/dTiaUGNbI6niWGIN0JXxAzEugD6CLrRTbFySSRx3G6n9UgbJ/wALpywEiTGp+QXI4yqX1HO5kx4bLsOF4gZACIMK8lonha5OwNyoVcrXCYUvMDQXJ5BUZyxTbpApE6Jo9xo12T7uUR9vVAYRhqYgMFmNMkDfLzXU8T4W2qAHHK6O6d5CjOaOvHiaT+zB9Qnvbax9AqYjENOXYm4d1GoI3WWHe5h7KrZ40Ozh06q1XCZpYbT3mu5OFvRLyK/jVUF47E+4RGxMaHn8JXOOw3Z1KbP83HyLTCYYCvmaaTxFQTZYYoS+i4jQOB8WghLGW2inG0hZgacV3eaF4rjKlKsKjHwTy0PMOG6MpH+o4pdxy8eKquyGTUdDvCVu3pF5EOETHM8uijBu7/eHurP2bbNGoOYB+a24S4vpuD75SRO4tInmkfbHi+SV9kcTw5IDmXcblp92OUJZwXixoPcaRNN2jm6tdH+JThtY6E6bjfoeSQcZwV87NdSnj9Mjkg15R7H9T2wq692ejYn4pPxT2jr1bF0Dok9LETY6o3B4QOOZ2nLn+yZxjHZKMp5HSZHD+GuqnM82+J/ZdXgWspakAH4xy+KCpuyiTlYNs7g2fAE3SziuMdWcBTnKBlzXvzyjkopym/4dLUMUaXYYziFHMXdrleJkOBieYMadEXhMfS94kOcd4MDoJCQ4Xg+7hPgmHYtbZrCToZOirxRFZH7Dn44kyMwE7GFjiS94IgwdyZtyCzptMq1WtlH1PnEIdFYxi+wRnDQHCdo+dk87rQJ+InxS/BkSSd46wjnGeo6pWyyx10CYegXuDRqfh1XRsoMo0+YkSecof2ew8AvP91h4fymeLoCox1ObkW8tEckt0T+PiqPL2wOvwkNqCvSEfrA+JS3G4tzsQxwJyTDdYIG8bplwPH60alnNtfcIrjnD89Imn3XNu3xAsFNsZqwbG1W1IpmM2vMj7JW7EOpuLbkjQHcEIbhBgEv7tXedBCsa/bmAIjRx5/ZTcabropGSaV9spxpjm5K4s7Q+kj4WV8JW7RpdOgJ8CbFexVT/AOM8O95rgD8pQHs1c4gHQNHmSTHyTY1aDJ1Jf0rSBzO5pbxW8Ju1lnHcgpRjdFddnLk6of8Aso0ZHc8p/Za8DZ/Vqs8D8x9lT2MuD4EfFEcP7uLd/k0/MfupXtorFVxYJxXDuaczJB3jQ+KCqsdUZIHeGo5joutxeGBB3Jmyj2YwNI4lzKolopOLQLZqlssnkBJgI86DkhqziMNwoNPaVLbtbF/GN1eqKsS2WNm3P128l2+PwTTh3vqUm06geBTAFz18JtH3QeIptlrXaXJ+AHzKMZctshXj46RzXDeC5jmfJHM3nzT2ngQ0Q0A9PkimACzY/OauQdDb7eKoRAngbtjwQzqOsi20o95P5y6dUM8mTKNhjFgYB2AQ+L1ARD2bi3nCDeTmmT9UtnRCLQRhHt3Hn9wt3tGoIvz6KaOGBE8lmcPGxKWv6Vc2u0PeEumkItojnuNvouXxFGthXECXsB1giB1+6MwfGg9oMz0QaHhkixhxfh3aDtGd2q3f9UbFW4ZxkOGR/de2xBUUsaXWghCcRwIqHMO6/Yj6pf4wyjauJlxzACoC5pgnVK8NiBSs4QAPyFtRxpaS2pr80PjagfZw8T4oNevRFS9+yuJxZqU35RAsergNJV/ZsjJWf/xb6AobDVeztq02THg2GDKdUDQvkeGUJo16DvTf+mLyIj8ulWLbAKbPi9psleOIgiee6axJLYz9kK0E+BXuHYouxYJ0zEDwg2WPsswy6ORHqvdl2dRs6h0k9Z+yRVyY7uonXVa2tkhpYqa7rkZSLgwZ0gHZNqjpk9AufpUwKziDuVkk7sbM2qo6OpULnS5xdynaw2QWLINS4kCGjx1OvivUahlbVWlzDFpJM8od+yeH0Szahovw6kDeNGz/ACiarbSNORv9EuwuILCZH9oB+P3WruIZmlsXgjkma2c8dmdWqNg297DVBYl0gqrqwHWw1UnQEfn5KVnTiVrZ6nYDc3jrdDvpFzw0eM+YlOq1CQPD+QssPQvmiAOtzFh6LJo03ukB1AWxaLx5LRrpN5MdNyicS7STbw/ZUpUpH3/PFBMWW+x3VbmNgCSkfEfZgEl1Nwa/Uge6fsfBD0cZWYCAHzz1Pgh6vHMQ0XbpuWkH7Jq+iK0tl6b6tKG1E5wlfMJF5Gi56l7Qsdeq0k+Su3iDf/rMfl7JJRZ1Y8qqmex4DnlpsRoeSTPe5pLXD85hE1KxJLpkrDHVJHVGP0Sn9mD6non3Aq00PM3+H0XJPeQuh4JVjD+vzTuNIXHPlKgtxgHqT8NkrxjZCLBOk+X1WOJpqb0V7CfZBwFS+m/kj+NMBfny28dku9nRDz1PwTfjtQNhJVzKXUAusP6YIP7rnmudnJtEmfVPnvlg8vilVGiScrGlziYhoJPMmAmi9gzboLwTi6OiZ4bEAMi2rtj+o6lL8FRcx+RwymCYIg7rSlWjYG526mUz+0IqkqZtVpgXkwTrNlm+jMwblRWeBpdp1b0KHfWLdLtNweXRZSZvwpdFauG70g7R8vsiG05ygbx6AyVgH7ASfBF4UOLhljqDNrayhdlXUUG1nQI9evJZExab+kLDFVO/3zliIJPdnx+hUuFr3lKTYPXeCYLo+KlmbKbzcQRa0FX7AEG8aecqlBzWjXQxe2n4U1qhOLboYhje7mN2mSdoGyH49Vp1abmBwa4XHjyKUtwdY96rUDf8WmSPM2HlKmoGt90eZv59E9bJU2c7VwVTds8nA281kaL4930IKfPpTqfWfmsey71ttRKblY/4nFCJtRzT91FTEzrZOa/DS+YgEC8yEkxFEjy16IqrJStI9UAMBM+FuikB1PzSYOjRHYWqQ0LSWhYySdjZrghsW5UbWCyrVFJp2XjNUMeDkCSdkXxWrmSjBVgCmGIgt3C0VsaU9B9Gr3afiJ9QnHshWAbiA2BXcO4XfpGbbcZoJ8khwDrMB3iPAX+io54ztjrvug43oE5WdJjnu/ohxBqw4vIAsI/uixPMiyU0fEanyMm8K+DqZZbqTvNz4lbUKMtaJ1FzsjXGNB+O7kzPsDqTY9Y/hZVKN4ix+CYNw0EtOxKGq05IboJQR1Sa7MqDIET06wnWBZAAOl/SNPkgaOEBIE69djumVahJhptuefTomSo58kuRjjKLTOYDKdZEz5JLicFAJpuNMC+X3h6EyPIp1WGgH3ug8WwC2958BsVL2P3ETUcTXaYLQ7mW3jaY1WmKY3Yk3vpN+Y8vimPD2i06uNvL8+KpxV7SbgQLCVVRtnPKfExe+LGfTSdpQxAcZ23V2mTfms8J7s+PzKatDPUqNBhsx6eKMo4Jje87YX69FnRN1ri/9v0SHRqgfiNNzr0yAI9391zuIY5plzCOuvxCfscY1UV/dd4O+aCJSRxOKZBtodEbh4hbY5oyut+SVjQ0CtejilGnoJNOyErVEa82QFbVKtjtV0VY9NWuzN/dLcojRFUHGBdEVrQzbWytaBqGzJ62lDUjckuJVzp/2D/2WNHQpEdFDXRsz+6OwVfujwFknxRt6IzB+8P+P0RyA+O6bOkqPlpPRp62sltdwAMg66/RGHb/AIhLsQfe8vklj2is34sL4e2CCdTPp59YRzqzWg/l0BhtfL6hY4s2Pj9Qn9ipeISa2bTfbmUvr1L9IPxt91o/QIKpqfD6FLWyj0gzD1LsHIT8z9kNxKpJ/Oqmi481hxf6p12ck/s//9k=' title='fig:'/><p class='caption'>Donald E. Knuth</p>
+
+</article></slide><slide class=""><hgroup><h2>Literate programming</h2></hgroup><article  id="literate-programming-1">
+
 <p>I believe that the time is ripe for significantly better documentation of programs, and that we can best achieve this by considering programs to be works of literature. Hence, my title: “Literate Programming.”</p>
 
 <p>Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.</p>
 
 <p>(Donald E. Knuth)</p>
 
-</article></slide><slide class=""><hgroup><h2>Literate programming</h2></hgroup><article  id="literate-programming-1">
+</article></slide><slide class=""><hgroup><h2>Literate programming</h2></hgroup><article  id="literate-programming-2">
 
 <p>The practitioner of literate programming can be regarded as an essayist, whose main concern is with exposition and excellence of style. Such an author, with thesaurus in hand, chooses the names of variables carefully and explains what each variable means. He or she strives for a program that is comprehensible because its concepts have been introduced in an order that is best for human understanding, using a mixture of formal and informal methods that reinforce each other.</p>
 
+<p>(Donald E. Knuth)</p>
+
+</article></slide><slide class=""><hgroup><h2>Documenting your code</h2></hgroup><article  id="documenting-your-code">
+
+<ul>
+<li>Better a lousy documentation than none at all</li>
+<li>Use spaces, empty lines, comments to structure your code</li>
+<li>COMMENT, COMMENT, COMMENT</li>
+<li>Document in plain text files and source code files</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Writing code</h2></hgroup><article  id="writing-code">
+
+<p>Keep your code clean:</p>
+
+<ul>
+<li>be consistent!</li>
+<li>use meaningful variable and function names</li>
+<li>don&#39;t use shorthands</li>
+<li>refactorize</li>
+<li>create distinct code chunks</li>
+<li>split the code into meaningful scripts</li>
+<li>use a formatting style and stick to it</li>
+</ul>
+
+<p>E.g. <a href='http://web.stanford.edu/class/cs109l/unrestricted/resources/google-style.html' title=''>http://web.stanford.edu/class/cs109l/unrestricted/resources/google-style.html</a></p>
+
+</article></slide><slide class=""><hgroup><h2>Simplify!</h2></hgroup><article  id="simplify">
+
+<ul>
+<li>make your code as simple as possible</li>
+<li>make your functions versatile and simple</li>
+<li>use simple data types if possible</li>
+<li>don&#39;t overdo it!</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>You never know</h2></hgroup><article  id="you-never-know">
+
+<ul>
+<li>what your code evolves into</li>
+<li>when you will need to publish it</li>
+<li>when someone will want to see it</li>
+</ul>
+
+<p>…so prepare in advance!</p>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>More R</h2></hgroup><article  id="more-r">
+
 </article></slide><slide class=""><hgroup><h2>Matrices and data frames</h2></hgroup><article  id="matrices-and-data-frames">
 
-<p>Caveats: * data frames turn strings to factors, which may have really disastrous consequences, use <code>stringsAsFactors=FALSE</code> * small typos can turn a numeric vector into a string * factors are dangerous to work with, use them cautiously</p></article></slide>
+<p>Caveats:</p>
+
+<ul>
+<li>data frames turn strings to factors, which may have really disastrous consequences, use <code>stringsAsFactors=FALSE</code></li>
+<li>small typos can turn a numeric vector into a string</li>
+<li>factors are dangerous to work with, use them cautiously</li>
+</ul>
+
+<p>Gory details: matrices are a basic data type. Data frames are a list.</p>
+
+</article></slide><slide class=""><hgroup><h2>Excercise 2</h2></hgroup><article  id="excercise-2">
+
+<ul>
+<li>Create a 5x3 matrix with random numbers. Use <code>matrix</code> and <code>rnorm</code>.</li>
+<li>Turn the matrix into a data frame. Use <code>as.data.frame</code> for that.</li>
+<li>Add column and row names.</li>
+<li>Add a column. Each value in the column should be &quot;A&quot; (a string). Use the <code>rep</code> function for that.</li>
+<li>Add a column with numbers 1 to 5. Use the <code>seq</code> function for that.</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Functions</h2></hgroup><article  id="functions">
+
+<ul>
+<li>If you have to write something more than twice, you should turn it into a function!</li>
+<li>R is a <em>functional</em> language</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Creating a function</h2></hgroup><article  id="creating-a-function">
+
+<pre >#&#39; Function name
+#&#39; Function description
+some_name &lt;- function(param1, param2=2) {
+
+## code comment
+&lt;your code goes in here&gt;
+
+}
+
+</pre></article></slide>
 
 
   <slide class="backdrop"></slide>
