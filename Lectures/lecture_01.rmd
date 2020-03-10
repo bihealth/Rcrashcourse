@@ -181,31 +181,7 @@ http://web.stanford.edu/class/cs109l/unrestricted/resources/google-style.html
 
 …so prepare in advance!
  
-# More R
  
-## Matrices and data frames
-
- Caveats:
-
-  * data frames turn strings to factors, which may have really
-    disastrous consequences, use `stringsAsFactors=FALSE`
-  * small typos can turn a numeric vector into a string
-  * factors are dangerous to work with, use them cautiously
-
-  Gory details: matrices are a basic data type. Data frames are a list.
-
-
-
-## Excercise 2
-
- * Create a 5x3 matrix with random numbers. Use `matrix` and `rnorm`.
- * Turn the matrix into a data frame. Use `as.data.frame` for that.
- * Add column and row names.
- * Add a column. Each value in the column should be "A" (a string). Use the
-   `rep` function for that.
- * Add a column with numbers 1 to 5. Use the `seq` function for that.
-
-
 
 ## Functions
 

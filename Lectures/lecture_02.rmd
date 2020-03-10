@@ -1,0 +1,39 @@
+---
+title: "R crash course / 02"
+author: ""
+date: "`r Sys.Date()`"
+output:
+  ioslides_presentation: default
+---
+
+```{r,echo=FALSE}
+## Set default options for the knitr RMD processing
+knitr::opts_chunk$set(echo=FALSE,warning=FALSE,message=FALSE,fig.width=5,fig.height=5,cache=TRUE,autodep=TRUE, results="hide")
+```
+
+
+## Matrices and data frames
+
+ Caveats:
+
+  * data frames turn strings to factors, which may have really
+    disastrous consequences, use `stringsAsFactors=FALSE`
+  * small typos can turn a numeric vector into a string
+  * factors are dangerous to work with, use them cautiously
+
+  Gory details: matrices are a basic data type. Data frames are a list.
+
+
+## Demonstration
+
+## Excercise 2
+
+ * Create a 5x3 matrix with random numbers. Use `matrix` and `rnorm`.
+ * Turn the matrix into a data frame. Use `as.data.frame` for that.
+ * Add column and row names.
+ * Add a column. Each value in the column should be "A" (a string). Use the
+   `rep` function for that.
+ * Add a column with numbers 1 to 5. Use the `seq` function for that.
+
+
+
