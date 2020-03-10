@@ -101,7 +101,7 @@ slide:not(.current) .plotly.html-widget{
 
 <p>Much like vectors, matrices can only hold one data type (e.g. only numeric or only character).</p>
 
-<pre >m &lt;- matrix(1:18, ncol=3, nrow=6)
+<pre class = 'prettyprint lang-r'>m &lt;- matrix(1:18, ncol=3, nrow=6)
 # compare with
 m &lt;- matrix(1:18, ncol=3, nrow=6, byrow=TRUE)
 dim(m)
@@ -114,7 +114,7 @@ nrow(m)</pre>
 
 <p>So, for example:</p>
 
-<pre >m[1, ] # vector which is the first row
+<pre class = 'prettyprint lang-r'>m[1, ] # vector which is the first row
 m[, 2] # vector which is the first column
 m[3, 1] # first element of the third row</pre>
 
@@ -122,7 +122,7 @@ m[3, 1] # first element of the third row</pre>
 
 <p>We can name rows and columns of a matrix and use the names to access the rows and columns:</p>
 
-<pre >colnames(m) &lt;- letters[1:ncol(m)]
+<pre class = 'prettyprint lang-r'>colnames(m) &lt;- letters[1:ncol(m)]
 rownames(m) &lt;- LETTERS[1:nrow(m)]
 
 m[&quot;A&quot;, &quot;b&quot;]
@@ -136,21 +136,46 @@ m[&quot;B&quot;, ] # etc.</pre>
 <li>If you select more rows or columns than are present, you will get a &quot;subscript out of bonds&quot; error</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Matrices and data frames</h2></hgroup><article  id="matrices-and-data-frames">
+</article></slide><slide class=""><hgroup><h2>Demonstration</h2></hgroup><article  id="demonstration">
+
+</article></slide><slide class=""><hgroup><h2>Data frames</h2></hgroup><article  id="data-frames">
+
+<p>Data frames are a bit like matrices, but every column can store different type of data. In this, they are more like lists (which they in fact are).</p>
+
+<pre class = 'prettyprint lang-r'>names &lt;- c(&quot;January&quot;, &quot;Bill&quot;)
+lastn &lt;- c(&quot;Weiner&quot;, &quot;Gates&quot;)
+age   &lt;- c(1001, 64)
+
+d &lt;- data.frame(names=names, last_names=lastn, age=age)
+class(d)
+class(d[,1])
+class(d[,3])</pre>
+
+</article></slide><slide class=""><hgroup><h2>Accessing elements in data frames</h2></hgroup><article  id="accessing-elements-in-data-frames">
+
+<p>You can access the data frame elements much like the elements of a matrix.</p>
+
+<p>However, since data frames are lists, the list operator (<code>$</code>) also works:</p>
+
+<pre class = 'prettyprint lang-r'>d$names # same as d[,1] or d[, &quot;names&quot;]
+d$lastn
+d$lastn[1]</pre>
+
+<p>However, note that when you select a row, you will get a data frame, not a vector. This is because each of the column can be of different type, and vectors can hold only one type of data.</p>
+
+</article></slide><slide class=""><hgroup><h2>Matrices vs data frames</h2></hgroup><article  id="matrices-vs-data-frames">
 
 <p>Caveats:</p>
 
 <ul>
-<li>data frames turn strings to factors, which may have really disastrous consequences, use <code>stringsAsFactors=FALSE</code></li>
+<li>data frames sometimes turn strings to factors (more on that later), which may have really disastrous consequences, use <code>stringsAsFactors=FALSE</code></li>
 <li>small typos can turn a numeric vector into a string</li>
 <li>factors are dangerous to work with, use them cautiously</li>
 </ul>
 
 <p>Gory details: matrices are a basic data type. Data frames are a list.</p>
 
-</article></slide><slide class=""><hgroup><h2>Demonstration</h2></hgroup><article  id="demonstration">
-
-</article></slide><slide class=""><hgroup><h2>Excercise 2</h2></hgroup><article  id="excercise-2">
+</article></slide><slide class=""><hgroup><h2>Excercise 2.1</h2></hgroup><article  id="excercise-2.1">
 
 <ul>
 <li>Create a 5x3 matrix with random numbers. Use <code>matrix</code> and <code>rnorm</code>.</li>
@@ -158,7 +183,209 @@ m[&quot;B&quot;, ] # etc.</pre>
 <li>Add column and row names.</li>
 <li>Add a column. Each value in the column should be &quot;A&quot; (a string). Use the <code>rep</code> function for that.</li>
 <li>Add a column with numbers 1 to 5. Use the <code>seq</code> function for that.</li>
-</ul></article></slide>
+</ul>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Reading and writing data</h2></hgroup><article  id="reading-and-writing-data">
+
+</article></slide><slide class=""><hgroup><h2>Reading data</h2></hgroup><article  id="reading-data">
+
+<p>Main data types you will encounter:</p>
+
+<table class = 'rmdtable'>
+<col width="33.333333%" />
+<col width="36.781609%" />
+<col width="29.885057%" />
+<tr class="header">
+<th align="left">Data type</th>
+<th align="left">Function</th>
+<th align="left">Notes</th>
+</tr>
+<tr class="odd">
+<td align="left">TSV / TAB separated values</td>
+<td align="left"><code>read.table()</code></td>
+<td align="left">Tab is <code>\t</code>. A very general and customizable function</td>
+</tr>
+<tr class="even">
+<td align="left">CSV / comma separated</td>
+<td align="left"><code>read.csv()</code></td>
+<td align="left">a wrapper around <code>read.table()</code></td>
+</tr>
+<tr class="odd">
+<td align="left">XLS (old Excel)</td>
+<td align="left"><code>read_xls()</code></td>
+<td align="left">Just don&#39;t use it. From the <code>readxl</code> package.</td>
+</tr>
+<tr class="even">
+<td align="left">XLSX (new Excel)</td>
+<td align="left"><code>read_xlsx()</code></td>
+<td align="left">From the <code>readxl</code> package. You need to provide the sheet number you wish to read. Note: returns a tibble, not a data frame!</td>
+</tr>
+</table>
+
+</article></slide><slide class=""><hgroup><h2>Examples (demonstration)</h2></hgroup><article  id="examples-demonstration">
+
+<ul>
+<li><code>header=TRUE</code></li>
+<li><code>colnames</code></li>
+<li><code>rownames</code></li>
+<li><code>sep=&quot;,&quot;</code></li>
+<li><code>stringsAsFactors</code></li>
+<li><code>quote</code></li>
+<li><code>comment.char</code></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Tibbles / readxl</h2></hgroup><article  id="tibbles-readxl">
+
+<p>tibbles belong to the tidyverse. They are nice to work with and very useful, but we will stick to data frames in this course. Therefore, do</p>
+
+<pre class = 'prettyprint lang-r'>mydataframe &lt;- as.data.frame(read_xlsx(&quot;file.xlsx&quot;))</pre>
+
+<p>One crucial difference between tibble and data frame is that <code>tibble[ , 1 ]</code> returns a tibble, while <code>dataframe[ , 1]</code> returns a vector. The second crucial difference is that it does not support row names (on purpose!).</p>
+
+</article></slide><slide class=""><hgroup><h2>Cleaning up data</h2></hgroup><article  id="cleaning-up-data">
+
+<p><code>unique</code> returns the unique values in a vector. Use it to check the correctness of the columns.</p>
+
+<p>Use <code>class()</code> to make sure that the columns are what you think they are.</p>
+
+<p>Use <code>summary()</code> to gain an overview of the data.</p>
+
+<p>Convert with <code>factor</code> when necessary (and only then).</p>
+
+</article></slide><slide class=""><hgroup><h2>Substitutions</h2></hgroup><article  id="substitutions">
+
+<pre class = 'prettyprint lang-r'>group &lt;- c(&quot;Control&quot;, &quot; control&quot;, &quot;control &quot;, &quot;Control   &quot;)
+group &lt;- gsub(&quot;Control&quot;, &quot;control&quot;, group)
+group &lt;- gsub(&quot; &quot;, &quot;&quot;, group)</pre>
+
+</article></slide><slide class=""><hgroup><h2>Regular expressions</h2></hgroup><article  id="regular-expressions">
+
+<pre class = 'prettyprint lang-r'>group &lt;- c(&quot;Control&quot;, &quot; control&quot;, &quot;control &quot;, &quot;Control   &quot;)
+
+# substitute at the end of the string
+gsub(&quot; $&quot;, &quot;&quot;, group)
+# at the beginning
+gsub(&quot;^ &quot;, &quot;&quot;, group)
+
+# any number of occurences
+gsub(&quot; *&quot;, &quot;&quot;, group)</pre>
+
+</article></slide><slide class=""><hgroup><h2>Regular expression cont.</h2></hgroup><article  id="regular-expression-cont.">
+
+<pre class = 'prettyprint lang-r'>foo &lt;- c(&quot;a1_123&quot;, &quot;a1_231&quot;, &quot;a2_17&quot;, &quot;b2_23&quot;, &quot;c2_889&quot;)
+
+# substitute digits only
+gsub(&quot;[0-9]*&quot;, &quot;&quot;, foo)
+
+# substitute letters only
+gsub(&quot;[a-z]*&quot;, &quot;&quot;, foo)
+
+# substitute everything after &quot;_&quot;
+gsub(&quot;_.*&quot;, &quot;&quot;, foo)</pre>
+
+</article></slide><slide class=""><hgroup><h2>Writing data</h2></hgroup><article  id="writing-data">
+
+<p>Main data types you will encounter:</p>
+
+<table class = 'rmdtable'>
+<col width="33.333333%" />
+<col width="36.781609%" />
+<col width="29.885057%" />
+<tr class="header">
+<th align="left">Data type</th>
+<th align="left">Function</th>
+<th align="left">Notes</th>
+</tr>
+<tr class="odd">
+<td align="left">TSV / TAB separated values</td>
+<td align="left"><code>write.table()</code></td>
+<td align="left">Tab is <code>\t</code>. A very general and customizable function Warning: column names</td>
+</tr>
+<tr class="even">
+<td align="left">CSV / comma separated</td>
+<td align="left"><code>write.csv()</code></td>
+<td align="left">a wrapper around <code>read.table()</code></td>
+</tr>
+<tr class="odd">
+<td align="left">XLS (old Excel)</td>
+<td align="left"></td>
+<td align="left">Just don&#39;t use it. No, seriously, don&#39;t.</td>
+</tr>
+<tr class="even">
+<td align="left">XLSX (new Excel)</td>
+<td align="left"><code>write_xlsx()</code></td>
+<td align="left">From the <code>writexl</code> package. Warning: row names omitted!</td>
+</tr>
+</table>
+
+</article></slide><slide class=""><hgroup><h2>Demonstration</h2></hgroup><article  id="demonstration-1">
+
+</article></slide><slide class=""><hgroup><h2>Excercise 2.2</h2></hgroup><article  id="excercise-2.2">
+
+<p>Read, inspect and correct (if reasonable) the following files:</p>
+
+<ul>
+<li><code>cars.xlsx</code></li>
+<li><code>iris.csv</code></li>
+<li><code>expression_data_vaccination_example.xlsx</code> (large!)</li>
+</ul>
+
+<p>The function <code>readxl_example(&quot;deaths.xls&quot;)</code> returns a file name. Read this file. How can you omit the lines at the top and at the bottom of the file? (hint: <code>?read_xls</code>). How can you force the date columns to be interpreted as dates and not numbers?</p>
+
+</article></slide><slide class=""><hgroup><h2>Wide and Long format (demonstration)</h2></hgroup><article  id="wide-and-long-format-demonstration">
+
+</article></slide><slide class=""><hgroup><h2>Converting from wide to long:</h2></hgroup><article  id="converting-from-wide-to-long">
+
+<pre class = 'prettyprint lang-r'>wide &lt;- read.table(header=TRUE, text=&#39;
+ subject sex control cond1 cond2
+       1   M     7.9  12.3  10.7
+       2   F     6.3  10.6  11.1
+       3   F     9.5  13.1  13.8
+       4   M    11.5  13.4  12.9
+&#39;)
+tidyr::gather(wide, key=&quot;condition&quot;, 
+             value=&quot;measurement&quot;,  control:cond2)</pre>
+
+<p><code>tidyr::gather</code> means we are accessing the <code>gather()</code> function from the <code>tidyr</code> package without having to call <code>library(tidyr)</code> first.</p>
+
+</article></slide><slide class=""><hgroup><h2>Converting from long to wide</h2></hgroup><article  id="converting-from-long-to-wide">
+
+<pre class = 'prettyprint lang-r'>long &lt;- read.table(header=TRUE, text=&#39;
+ subject  sampleID sex condition measurement
+       1  ID000001 M   control         7.9
+       1  ID000002 M     cond1        12.3
+       1  ID000003 M     cond2        10.7
+       2  ID000004 F   control         6.3
+       2  ID000005 F     cond1        10.6
+       2  ID000006 F     cond2        11.1
+       3  ID000007 F   control         9.5
+       3  ID000008 F     cond1        13.1
+       3  ID000009 F     cond2        13.8
+&#39;)</pre>
+
+</article></slide><slide class=""><hgroup><h2>Converting from long to wide</h2></hgroup><article  id="converting-from-long-to-wide-1">
+
+<pre class = 'prettyprint lang-r'>## not what we wanted!!!
+spread(long, key=&quot;condition&quot;, value=&quot;measurement&quot;)
+
+## Instead: 
+long &lt;- long[ , c(&quot;subject&quot;, &quot;condition&quot;, &quot;measurement&quot;) ]
+tidyr::spread(long, key=&quot;condition&quot;, value=&quot;measurement&quot;)</pre>
+
+</article></slide><slide class=""><hgroup><h2>Excercise 2.3</h2></hgroup><article  id="excercise-2.3">
+
+<p>Convert the following files to long format:</p>
+
+<ul>
+<li><code>iris.csv</code></li>
+<li><code>mtcars_wide.csv</code></li>
+<li><code>labresults_wide.csv</code></li>
+<li><code>cars.xlsx</code> (tricky!)</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Excercise 2.4</h2></hgroup><article  id="excercise-2.4">
+
+<p>For the first sheet (&quot;targets&quot;) from the file <code>expression_data_vaccination_example.xlsx</code>, create a new table. For each Patient ID there should be one row. The row should contain a column for each day (D0, D1 etc.) containing the sample IDs collected on that day.</p></article></slide>
 
 
   <slide class="backdrop"></slide>
