@@ -97,7 +97,46 @@ slide:not(.current) .plotly.html-widget{
           </hgroup>
   </slide>
 
-<slide class=""><hgroup><h2>Matrices and data frames</h2></hgroup><article  id="matrices-and-data-frames">
+<slide class=""><hgroup><h2>Data matrices</h2></hgroup><article  id="data-matrices">
+
+<p>Much like vectors, matrices can only hold one data type (e.g. only numeric or only character).</p>
+
+<pre >m &lt;- matrix(1:18, ncol=3, nrow=6)
+# compare with
+m &lt;- matrix(1:18, ncol=3, nrow=6, byrow=TRUE)
+dim(m)
+ncol(m)
+nrow(m)</pre>
+
+</article></slide><slide class=""><hgroup><h2>Accessing columns, rows and element</h2></hgroup><article  id="accessing-columns-rows-and-element">
+
+<p><code>matrix[row, column]</code></p>
+
+<p>So, for example:</p>
+
+<pre >m[1, ] # vector which is the first row
+m[, 2] # vector which is the first column
+m[3, 1] # first element of the third row</pre>
+
+</article></slide><slide class=""><hgroup><h2>Row and column names</h2></hgroup><article  id="row-and-column-names">
+
+<p>We can name rows and columns of a matrix and use the names to access the rows and columns:</p>
+
+<pre >colnames(m) &lt;- letters[1:ncol(m)]
+rownames(m) &lt;- LETTERS[1:nrow(m)]
+
+m[&quot;A&quot;, &quot;b&quot;]
+m[&quot;B&quot;, ] # etc.</pre>
+
+</article></slide><slide class=""><hgroup><h2>Remember</h2></hgroup><article  id="remember">
+
+<ul>
+<li>If you select a single column or a single row, you will get a vector</li>
+<li>If you select more than one row or column, you will get a (smaller) matrix</li>
+<li>If you select more rows or columns than are present, you will get a &quot;subscript out of bonds&quot; error</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Matrices and data frames</h2></hgroup><article  id="matrices-and-data-frames">
 
 <p>Caveats:</p>
 

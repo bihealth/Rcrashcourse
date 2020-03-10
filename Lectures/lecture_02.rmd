@@ -11,6 +11,51 @@ output:
 knitr::opts_chunk$set(echo=FALSE,warning=FALSE,message=FALSE,fig.width=5,fig.height=5,cache=TRUE,autodep=TRUE, results="hide")
 ```
 
+## Data matrices
+
+Much like vectors, matrices can only hold one data type (e.g. only numeric
+or only character).
+
+```
+m <- matrix(1:18, ncol=3, nrow=6)
+# compare with
+m <- matrix(1:18, ncol=3, nrow=6, byrow=TRUE)
+dim(m)
+ncol(m)
+nrow(m)
+```
+
+## Accessing columns, rows and element
+
+`matrix[row, column]`
+
+So, for example:
+
+```
+m[1, ] # vector which is the first row
+m[, 2] # vector which is the first column
+m[3, 1] # first element of the third row
+```
+
+## Row and column names
+
+We can name rows and columns of a matrix and use the names to access the
+rows and columns:
+
+```
+colnames(m) <- letters[1:ncol(m)]
+rownames(m) <- LETTERS[1:nrow(m)]
+
+m["A", "b"]
+m["B", ] # etc.
+```
+
+## Remember
+
+ * If you select a single column or a single row, you will get a vector
+ * If you select more than one row or column, you will get a (smaller) matrix
+ * If you select more rows or columns than are present, you will get a
+   "subscript out of bonds" error
 
 ## Matrices and data frames
 
