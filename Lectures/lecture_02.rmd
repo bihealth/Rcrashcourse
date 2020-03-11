@@ -113,6 +113,19 @@ vectors can hold only one type of data.
    `rep` function for that.
  * Add a column with numbers 1 to 5. Use the `seq` function for that.
 
+## Using rep
+
+`rep()` is used to replicate vectors.
+
+```{r}
+rep(c("A", "B"), 5) 
+# result:
+#  [1] "A" "B" "A" "B" "A" "B" "A" "B" "A" "B"
+
+rep(c("A", "B"), each=5)
+# result
+# [1] "A" "A" "A" "A" "A" "B" "B" "B" "B" "B"
+```
 
 # Reading and writing data
 
@@ -303,7 +316,7 @@ long <- read.table(header=TRUE, text='
 
 ```{r}
 ## not what we wanted!!!
-spread(long, key="condition", value="measurement")
+tidyr::spread(long, key="condition", value="measurement")
 
 ## Instead: 
 long <- long[ , c("subject", "condition", "measurement") ]

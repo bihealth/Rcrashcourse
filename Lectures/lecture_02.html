@@ -9,7 +9,7 @@
 
 
 
-  <meta name="date" content="2020-03-10" />
+  <meta name="date" content="2020-03-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -93,7 +93,7 @@ slide:not(.current) .plotly.html-widget{
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">2020-03-10</p>
+            <p style="margin-top: 6px; margin-left: -2px;">2020-03-11</p>
           </hgroup>
   </slide>
 
@@ -184,6 +184,18 @@ d$lastn[1]</pre>
 <li>Add a column. Each value in the column should be &quot;A&quot; (a string). Use the <code>rep</code> function for that.</li>
 <li>Add a column with numbers 1 to 5. Use the <code>seq</code> function for that.</li>
 </ul>
+
+</article></slide><slide class=""><hgroup><h2>Using rep</h2></hgroup><article  id="using-rep">
+
+<p><code>rep()</code> is used to replicate vectors.</p>
+
+<pre class = 'prettyprint lang-r'>rep(c(&quot;A&quot;, &quot;B&quot;), 5) 
+# result:
+#  [1] &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot;
+
+rep(c(&quot;A&quot;, &quot;B&quot;), each=5)
+# result
+# [1] &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot;</pre>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Reading and writing data</h2></hgroup><article  id="reading-and-writing-data">
 
@@ -366,7 +378,7 @@ tidyr::gather(wide, key=&quot;condition&quot;,
 </article></slide><slide class=""><hgroup><h2>Converting from long to wide</h2></hgroup><article  id="converting-from-long-to-wide-1">
 
 <pre class = 'prettyprint lang-r'>## not what we wanted!!!
-spread(long, key=&quot;condition&quot;, value=&quot;measurement&quot;)
+tidyr::spread(long, key=&quot;condition&quot;, value=&quot;measurement&quot;)
 
 ## Instead: 
 long &lt;- long[ , c(&quot;subject&quot;, &quot;condition&quot;, &quot;measurement&quot;) ]
