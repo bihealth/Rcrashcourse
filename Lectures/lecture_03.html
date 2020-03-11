@@ -221,12 +221,27 @@ head(res[int, ])</pre>
 
 </article></slide><slide class=""><hgroup><h2>More regular expressions</h2></hgroup><article  id="more-regular-expressions">
 
-<pre class = 'prettyprint lang-r'>sel &lt;- grep(&quot;^GBP[123]$&quot;, res$Gene)
+<pre class = 'prettyprint lang-r'>## search for GBP1, GBP2, GBP3, 
+## but not GBP12 or pseudo-GBP1
+sel &lt;- grep(&quot;^GBP[123]$&quot;, res$Gene)
 res[ sel, ]
 
+## search for either cytokine or chemokine
 sel &lt;- grep(&quot;(cytokine|chemokine)&quot;, res$Description, ignore.case=TRUE)
 length(sel)
 head(res[ sel, ])</pre>
+
+</article></slide><slide class=""><hgroup><h2>More regular expressions (cont.)</h2></hgroup><article  id="more-regular-expressions-cont.">
+
+<p>We can use the parentheses for substitution as well. Please don&#39;t mind that weird <code>\\1</code>, just learn it.</p>
+
+<p>Remember – <code>.*</code> means any character (<code>.</code>) any number of times (<code>*</code>). <code>[0-9]*</code> means any digit (<code>[0-9]</code>) any number of times (<code>*</code>).</p>
+
+<pre class = 'prettyprint lang-r'>## say we only want the middle part
+a &lt;- c(&quot;ID.1.2020&quot;, &quot;ID.3.2019&quot;, &quot;ABC.4.2018&quot;)
+
+## extract the middle part
+gsub(&quot;.*-(.*)-.*&quot;, &quot;\\1&quot;, a)</pre>
 
 </article></slide><slide class=""><hgroup><h2>Combining searches</h2></hgroup><article  id="combining-searches">
 
@@ -325,10 +340,9 @@ merge(df1, df2, by=&quot;subject.id&quot;)</pre>
 <p>The files <code>expression_data_vaccination_example.xlsx</code> and <code>labresults_full.csv</code> contain data from the same study.</p>
 
 <ol>
-<li>read the first sheet from the XLSX file.</li>
-<li>read the CSV file.</li>
-<li>Which columns ID the subjects? Are there any subjects in common?</li>
-<li>We are interested only in the following information: Subject ID, ARM (group), Time point, sex, age, test name and the actual measurement.</li>
+<li>read the first sheet from the XLSX file and the CSV file.</li>
+<li>Which columns ID the subjects? Are there any subjects in common? How do you match the subjects?</li>
+<li>We are interested only in the following information: Subject ID, ARM (group), Time point, sex, age, test name and the actual measurement. Are the measurements numeric?</li>
 <li>Use the subjects to merge the two data frames however you see fit. Note that there are multiple time points per subject and multiple measurements per subject and time point.</li>
 </ol>
 

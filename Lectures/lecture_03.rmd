@@ -184,12 +184,31 @@ head(res[int, ])
 ## More regular expressions
 
 ```{r}
+## search for GBP1, GBP2, GBP3, 
+## but not GBP12 or pseudo-GBP1
 sel <- grep("^GBP[123]$", res$Gene)
 res[ sel, ]
 
+## search for either cytokine or chemokine
 sel <- grep("(cytokine|chemokine)", res$Description, ignore.case=TRUE)
 length(sel)
 head(res[ sel, ])
+```
+
+## More regular expressions (cont.)
+
+We can use the parentheses for substitution as well. Please don't mind that
+weird `\\1`, just learn it.
+
+Remember – `.*` means any character (`.`) any number of times (`*`).
+`[0-9]*` means any digit (`[0-9]`) any number of times (`*`).
+
+```{r}
+## say we only want the middle part
+a <- c("ID.1.2020", "ID.3.2019", "ABC.4.2018")
+
+## extract the middle part
+gsub(".*-(.*)-.*", "\\1", a)
 ```
 
 ## Combining searches
@@ -313,14 +332,16 @@ merge(df1, df2, by="subject.id")
 The files `expression_data_vaccination_example.xlsx` and
 `labresults_full.csv` contain data from the same study.
 
- 1. read the first sheet from the XLSX file.
- 2. read the CSV file.
- 3. Which columns ID the subjects? Are there any subjects in common? 
+ 1. read the first sheet from the XLSX file and the CSV file.
+ 3. Which columns ID the subjects? Are there any subjects in common? How do
+    you match the subjects?
  5. We are interested only in the following information: Subject ID, ARM
     (group), Time point, sex, age, test name and the actual measurement.
+    Are the measurements numeric?
  4. Use the subjects to merge the two data frames however you see fit. Note
     that there are multiple time points per subject and multiple
     measurements per subject and time point.
+
 
 # Simple statistics with R
 
