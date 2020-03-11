@@ -1,0 +1,132 @@
+---
+title: "R crash course / 03"
+author: ""
+date: "`r Sys.Date()`"
+output:
+  ioslides_presentation: default
+---
+
+```{r,echo=FALSE}
+## Set default options for the knitr RMD processing
+knitr::opts_chunk$set(echo=TRUE,eval=FALSE,warning=FALSE,message=FALSE,fig.width=5,fig.height=5,cache=TRUE,autodep=TRUE, results="hide")
+```
+
+
+
+# Searching, sorting and selecting
+
+## sort and order
+
+`sort` directly sorts a vector:
+
+```{r}
+v <- sample(1:10)/10 # randomize numbers 1-10
+sort(v)
+sort(v, decreasing=TRUE)
+```
+
+However, `order` is more useful. It returns the *position*
+of a value in a sorted vector.
+
+```{r}
+order(v)
+order(v, decreasing=TRUE)
+```
+
+## sort and order cont.
+
+`sort` and `order` can be applied to character vectors as well:
+
+```{r}
+l <- sample(letters, 10)
+sort(l)
+order(l, decreasing=TRUE)
+```
+
+Note that sorting values turned to a character vector will not give
+expected results:
+
+```{r}
+v <- sample(1:200, 15)
+sort(as.character(v))
+```
+
+## Sorting data frames
+
+To sort a data frame according to one of its columns, we use `order` and
+then select rows of a data frame based on that order.
+
+```{r}
+df <- data.frame(id=paste0("ID", 1:10), val=rnorm(10))
+ord <- order(df$val)
+df[ ord, ]
+df[ order(df$val, decreasing=TRUE), ]
+df[ order(abs(df$val), decreasing=TRUE), ]
+```
+
+## Example
+
+```{r, eval=TRUE}
+res <- read.csv("../Datasets/transcriptomics_results.csv")
+res <- res[ , c(2, 4, 7:8) ]
+colnames(res) <- c("Gene", "Description", "LFC", "p.value")
+```
+
+## Example cont.
+
+```{r}
+## order by decreasing absolute logFC
+ord <- order(abs(res$LFC), decreasing=TRUE)
+res <- res[ord, ]
+plot(res$LFC[1:250], type="b")
+
+## then, order by p-value
+ord <- order(res$p.value)
+res <- res[ord, ]
+plot(abs(res$LFC[1:250]), type="b")
+plot(res$p.value[1:250], type="b", log="y")
+```
+
+## Plot with LOESS smoothing
+
+```{r, eval=FALSE}
+lo <- loess.smooth(1:500, abs(res$LFC[1:500]))
+plot(abs(res$LFC[1:500]), col="grey", type="b", bty="n",
+  ylab="Log2 fold change")
+lines(lo$x, lo$y)
+```
+
+
+## Plot with LOESS smoothing
+
+```{r, eval=TRUE,echo=FALSE,fig.width=7,fig.height=5}
+## with echo=FALSE, this code does not show on presentation
+## otherwise the figure does not fit!
+ord <- order(abs(res$LFC), decreasing=TRUE)
+res <- res[ord, ]
+ord <- order(res$p.value)
+res <- res[ord, ]
+
+lo <- loess.smooth(1:500, abs(res$LFC[1:500]))
+plot(abs(res$LFC[1:500]), col="grey", type="b", bty="n",
+  ylab="Log2 fold change")
+lines(lo$x, lo$y)
+
+```
+
+
+## 
+
+
+
+```{r}
+interferon <- c("TAP1","IFIH1","IRF7","PARP9","STAT1","PLSCR1",
+                "IFITM1","HERC5","DDX60","USP18","RSAD2","IFIT1")
+
+
+
+```
+
+
+
+```
