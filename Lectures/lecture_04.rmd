@@ -20,8 +20,13 @@ targets <- read_xlsx("Datasets/expression_data_vaccination_example.xlsx", sheet=
 targets <- targets[ , c("USUBJID", "Timepoint", "ARM", "SEX", "AGE") ]
 lab <- read.csv("Datasets/labresults_full.csv")
 lab <- lab[ , c("USUBJID", "LBTEST", "LBTESTCD", "LBORRES", "Timepoint") ]
+
+## remove the "SCREEN" time point
+lab <- lab[ lab$Timepoint != "SCREEN", ]
+
 ## not what we want!
 merged <- merge(targets, lab, by="USUBJID")
+table(merged$Timepoint.x, merged$Timepoint.y)
 ```
 
 ## Reading and column selection
@@ -32,9 +37,9 @@ present in the expression data set?
 
 ```{r}
 ## to keep all time points
-targets <- targets[ , c("USUBJID", "ARM", "SEX", "AGE") ]
-targets <- targets[ !duplicated(targets$USUBJID), ] ## remove duplicated lines
-merged <- merge(targets, lab, by="USUBJID")
+targets2 <- targets[ , c("USUBJID", "ARM", "SEX", "AGE") ]
+targets2 <- targets2[ !duplicated(targets2$USUBJID), ] ## remove duplicated lines
+merged_full <- merge(targets2, lab, by="USUBJID")
 
 ## this one drops all timepoints not present in "targets"
 merged <- merge(targets, lab, by=c("USUBJID", "Timepoint"))
@@ -64,7 +69,7 @@ labwide[,16] <- gsub("<", "", labwide[,16])
 
 ## these column is all NA
 labwide <- labwide[,-17]
-labwide <- data.frame(labwide[,1:5], data.matrix(labwide[,6:36]))
+labwide <- data.frame(labwide[,1:5], data.matrix(labwide[,6:35]))
 ```
 
 
@@ -76,3 +81,7 @@ labwide <- data.frame(labwide[,1:5], data.matrix(labwide[,6:36]))
 
 
 ## Basic plots (demonstration)
+
+
+
+
