@@ -105,17 +105,22 @@ slide:not(.current) .plotly.html-widget{
 targets &lt;- targets[ , c(&quot;USUBJID&quot;, &quot;Timepoint&quot;, &quot;ARM&quot;, &quot;SEX&quot;, &quot;AGE&quot;) ]
 lab &lt;- read.csv(&quot;Datasets/labresults_full.csv&quot;)
 lab &lt;- lab[ , c(&quot;USUBJID&quot;, &quot;LBTEST&quot;, &quot;LBTESTCD&quot;, &quot;LBORRES&quot;, &quot;Timepoint&quot;) ]
+
+## remove the &quot;SCREEN&quot; time point
+lab &lt;- lab[ lab$Timepoint != &quot;SCREEN&quot;, ]
+
 ## not what we want!
-merged &lt;- merge(targets, lab, by=&quot;USUBJID&quot;)</pre>
+merged &lt;- merge(targets, lab, by=&quot;USUBJID&quot;)
+table(merged$Timepoint.x, merged$Timepoint.y)</pre>
 
 </article></slide><slide class=""><hgroup><h2>Reading and column selection</h2></hgroup><article  id="reading-and-column-selection-1">
 
 <p>We need to choose: do we want to keep all measurements and just fill out meta-information from <code>targets</code>, or do we want only to keep the time points present in the expression data set?</p>
 
 <pre class = 'prettyprint lang-r'>## to keep all time points
-targets &lt;- targets[ , c(&quot;USUBJID&quot;, &quot;ARM&quot;, &quot;SEX&quot;, &quot;AGE&quot;) ]
-targets &lt;- targets[ !duplicated(targets$USUBJID), ] ## remove duplicated lines
-merged &lt;- merge(targets, lab, by=&quot;USUBJID&quot;)
+targets2 &lt;- targets[ , c(&quot;USUBJID&quot;, &quot;ARM&quot;, &quot;SEX&quot;, &quot;AGE&quot;) ]
+targets2 &lt;- targets2[ !duplicated(targets2$USUBJID), ] ## remove duplicated lines
+merged_full &lt;- merge(targets2, lab, by=&quot;USUBJID&quot;)
 
 ## this one drops all timepoints not present in &quot;targets&quot;
 merged &lt;- merge(targets, lab, by=c(&quot;USUBJID&quot;, &quot;Timepoint&quot;))</pre>
@@ -141,7 +146,7 @@ labwide[,16] &lt;- gsub(&quot;&lt;&quot;, &quot;&quot;, labwide[,16])
 
 ## these column is all NA
 labwide &lt;- labwide[,-17]
-labwide &lt;- data.frame(labwide[,1:5], data.matrix(labwide[,6:36]))</pre>
+labwide &lt;- data.frame(labwide[,1:5], data.matrix(labwide[,6:35]))</pre>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Simple statistics with R</h2></hgroup><article  id="simple-statistics-with-r">
 
