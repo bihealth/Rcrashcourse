@@ -77,7 +77,8 @@ labwide <- data.frame(labwide[,1:5], data.matrix(labwide[,6:35]))
 
 ## Basic tests (demonstration)
 
-
+  * t.test and wilcox.test
+  * pairwise t.test
 
 
 ## Basic plots (demonstration)
@@ -85,3 +86,35 @@ labwide <- data.frame(labwide[,1:5], data.matrix(labwide[,6:35]))
 
 
 
+## Plotting principles
+
+ * plotting parameters
+ * `pch`, `bty`, `lty`
+ * Farbenlehre
+
+## Colors in R (and other programming languages)
+
+ * (R, G, B) color specification
+ * Hexadecimal notation
+ * Basic colors:
+   * `#FF0000` (red)
+   * `#00FF00` (green)
+   * `#0000FF` (blue)
+
+## Plot for pairwise data
+
+Introducing the "for" loop.
+
+
+
+# Multivariate data
+
+## PCA
+
+ * An example of a complex object type
+
+```{r}
+data(iris)
+pca <- prcomp(iris[,1:4], scale=TRUE)
+plot(pca$x[,1], pca$x[,2], col=factor(iris$Species))
+```

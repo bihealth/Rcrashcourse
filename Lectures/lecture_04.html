@@ -152,7 +152,47 @@ labwide &lt;- data.frame(labwide[,1:5], data.matrix(labwide[,6:35]))</pre>
 
 </article></slide><slide class=""><hgroup><h2>Basic tests (demonstration)</h2></hgroup><article  id="basic-tests-demonstration">
 
-</article></slide><slide class=""><hgroup><h2>Basic plots (demonstration)</h2></hgroup><article  id="basic-plots-demonstration"></article></slide>
+<ul>
+<li>t.test and wilcox.test</li>
+<li>pairwise t.test</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Basic plots (demonstration)</h2></hgroup><article  id="basic-plots-demonstration">
+
+</article></slide><slide class=""><hgroup><h2>Plotting principles</h2></hgroup><article  id="plotting-principles">
+
+<ul>
+<li>plotting parameters</li>
+<li><code>pch</code>, <code>bty</code>, <code>lty</code></li>
+<li>Farbenlehre</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Colors in R (and other programming languages)</h2></hgroup><article  id="colors-in-r-and-other-programming-languages">
+
+<ul>
+<li>(R, G, B) color specification</li>
+<li>Hexadecimal notation</li>
+<li>Basic colors:</li>
+<li><code>#FF0000</code> (red)</li>
+<li><code>#00FF00</code> (green)</li>
+<li><code>#0000FF</code> (blue)</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Plot for pairwise data</h2></hgroup><article  id="plot-for-pairwise-data">
+
+<p>Introducing the &quot;for&quot; loop.</p>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Multivariate data</h2></hgroup><article  id="multivariate-data">
+
+</article></slide><slide class=""><hgroup><h2>PCA</h2></hgroup><article  id="pca">
+
+<ul>
+<li>An example of a complex object type</li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>data(iris)
+pca &lt;- prcomp(iris[,1:4], scale=TRUE)
+plot(pca$x[,1], pca$x[,2], col=factor(iris$Species))</pre></article></slide>
 
 
   <slide class="backdrop"></slide>
