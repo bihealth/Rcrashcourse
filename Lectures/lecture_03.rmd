@@ -205,7 +205,7 @@ Remember – `.*` means any character (`.`) any number of times (`*`).
 
 ```{r}
 ## say we only want the middle part
-a <- c("ID.1.2020", "ID.3.2019", "ABC.4.2018")
+a <- c("ID-1-2020", "ID-3-2019", "ABC-4-2018")
 
 ## extract the middle part
 gsub(".*-(.*)-.*", "\\1", a)
