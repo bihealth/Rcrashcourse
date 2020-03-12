@@ -66,15 +66,16 @@ labwide <- spread(merged, key="LBTESTCD", value="LBORRES")
 
 ```{r eval=TRUE}
 ## this works
-labwide <- spread(merged[ , -6], key="LBTESTCD", value="LBORRES")
+labwide <- spread(merged[ , colnames(merged) != "LBTEST"], key="LBTESTCD", value="LBORRES")
 ```
 
 ## Cleaning up
 
 ```{r,eval=TRUE}
 sapply(labwide, class) # all measurements are character!
-labwide2 <- data.frame(labwide[,1:5], data.matrix(labwide[,6:36]))
-which(is.na(labwide2), arr.ind=T)
+startpos <- which(colnames(labwide) == "ACA")
+labwide2 <- data.frame(labwide[,1:(startpos-1)], data.matrix(labwide[,startpos:ncol(labwide)]))
+which(is.na(labwide2), arr.ind=T)[,2]
 
 ## impute low measurements
 labwide[,14] <- gsub("<", "", labwide[,14])
@@ -115,7 +116,7 @@ d1 <- labwide$Timepoint == "D1"
 Paired or not paired?
 
 ```{r,eval=TRUE}
-tst <- "LYM" # lymphocyte count
+tst <- "NEUT" # lymphocyte count
 x <- labwide[ ,tst]
 t.test(x[d0 & fluad], x[d1 & fluad])
 t.test(x[d0 & fluad], x[d1 & fluad], paired=TRUE)
@@ -127,7 +128,7 @@ We must make sure that all the data points are paired!
 
 ## Excercise 4.1
 
- * Run t-test for CRP (C-reactive protein), NEUT (neutrophils)
+ * Run t-test for CRP (C-reactive protein), LYM (lymphocytes)
  * `wilcox.test()` is the U test / Mann Whitney test / Wilcoxon test. Try it
 
 
