@@ -306,8 +306,8 @@ res <- read.csv("Datasets/transcriptomics_results.csv")
 ## res and genes are not identical!
 com <- intersect(genes$ProbeName, res$ProbeName)
 e <- data.matrix(e[ match(com, genes$ProbeName), ])
-rownames(e) <- genes$GeneName
 genes <- genes[ match(com, genes$ProbeName), ]
+rownames(e) <- genes$GeneName
 res <- res[ match(com, res$ProbeName), ]
 all(res$ProbeName == genes$ProbeName)
 ```
