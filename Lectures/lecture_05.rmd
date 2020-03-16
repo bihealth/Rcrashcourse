@@ -316,8 +316,15 @@ all(res$ProbeName == genes$ProbeName)
 ## Selecting genes to plot on a heatmap
 
 ```{r eval=TRUE}
-n <- 50 # top 50
-sel <- order(res$qval.F.D1)[1:n]
+n <- 25 # top 50
+byqval <- order(res$qval.F.D1)
+sel <- byqval[1:n]
+
+downreg <- which(res$logFC.F.D1 < 0)
+downreg <- byqval[ byqval %in% downreg ][1:n]
+
+sel <- c(sel, downreg)
+
 
 ## ordering and selecting columns
 group <- paste0(t$ARM, ".", t$Timepoint)

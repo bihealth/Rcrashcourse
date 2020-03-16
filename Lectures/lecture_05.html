@@ -270,8 +270,8 @@ res &lt;- read.csv(&quot;Datasets/transcriptomics_results.csv&quot;)
 ## res and genes are not identical!
 com &lt;- intersect(genes$ProbeName, res$ProbeName)
 e &lt;- data.matrix(e[ match(com, genes$ProbeName), ])
-rownames(e) &lt;- genes$GeneName
 genes &lt;- genes[ match(com, genes$ProbeName), ]
+rownames(e) &lt;- genes$GeneName
 res &lt;- res[ match(com, res$ProbeName), ]
 all(res$ProbeName == genes$ProbeName)</pre>
 
