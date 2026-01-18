@@ -9,7 +9,7 @@
 
 
 
-  <meta name="date" content="2024-09-17" />
+  <meta name="date" content="2026-01-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -3270,7 +3270,7 @@ background: #70ACC0;
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">2024-09-17</p>
+            <p style="margin-top: 6px; margin-left: -2px;">2026-01-18</p>
           </hgroup>
   </slide>
 
@@ -3301,6 +3301,7 @@ background: #70ACC0;
 <li>run simple statistical analysis (t-test, non-parametric tests, basic ANOVA, basic linear regression)</li>
 <li>create reports from your analysis in a number of formats</li>
 </ul></li>
+<li>I try to avoid teaching you <em>programming in R</em> as such, it is more data science with R. However, some programming concepts are unavoidable.</li>
 <li>Give you good habits</li>
 <li>Proceed along a helix</li>
 </ul>
@@ -3309,12 +3310,11 @@ background: #70ACC0;
 
 <ul>
 <li>E-mail: <code>&lt;cubi-teaching@charite.de&gt;</code></li>
-<li>Github: <code>https://github.com/bihealth/RcrashCourse2023</code></li>
-<li>Slides: <code>https://bihealth.github.io/RCrashCourse2023/</code></li>
+<li>Github: <code>https://github.com/bihealth/Rcrashcourse</code></li>
 <li>Teams</li>
 </ul>
 
-<p>To view the lectures, click on the link or download the HTML file and open it in a browser.</p>
+<p>To view the lectures, click on the link.</p>
 
 </article></slide><slide class=""><hgroup><h2>Aims for today</h2></hgroup><article  id="aims-for-today" class="smaller ">
 
@@ -3408,7 +3408,7 @@ background: #70ACC0;
 ## Assignment and creating variables 
 
 a &lt;- 2
-name &lt;- &quot;Manuela&quot;
+name &lt;- &quot;January&quot;
 
 ## vectors and multiple assignment 
 
@@ -3447,7 +3447,7 @@ i &lt;- length(a)</pre>
 <li>add vector <code>c(1, 2, 5)</code> and vector <code>c(10, 20, 30)</code>. What happens?</li>
 <li>type <code>length(teacher)</code>; type <code>length(teachers)</code>; what are the results?</li>
 <li>type <code>pi</code>. What happens?</li>
-<li>say, you have thre values which are the diameters of three circles: 1, 5 and 13. You would like to have a vector containing the areas of these circles. What is the simplest way of doing that?</li>
+<li>say, you have three values which are the diameters of three circles: 1, 5 and 13. You would like to have a vector containing the areas of these circles. What is the simplest way of doing that?</li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Exercises 1.2(b) Extra: recycling</h2></hgroup><article  id="exercises-1.2b-extra-recycling" class="smaller ">
@@ -3490,7 +3490,7 @@ students[sel] &lt;- c(&quot;Arthur&quot;, &quot;Beate&quot;)</pre>
 
 </article></slide><slide class=""><hgroup><h2>Factors</h2></hgroup><article  id="factors" class="smaller ">
 
-<p>Some variables are factors. Factors look almost like strings, but they have a slightly different behavior. Sometimes factor behave like numbers.</p>
+<p>Some variables are factors. Factors look almost like strings, but they have a slightly different behavior. Sometimes factors behave like numbers.</p>
 
 <p>In statistics, factors play an important role.</p>
 
@@ -3582,8 +3582,8 @@ samples_sd &lt;- sd(samples)</pre></div>
 <p><strong>Demo</strong></p>
 
 <ul>
-<li><code>https://youtu.be/rnGADz4cuBA</code></li>
-<li><code>https://youtu.be/NTnLZQwKhvA</code></li>
+<li><code>https://youtu.be/rnGADz4cuBA</code> (Functions, 6 minutes)</li>
+<li><code>https://youtu.be/NTnLZQwKhvA</code> (defining functions, 7 minutes)</li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Exercise 1.4 More on vectors (and functions)</h2></hgroup><article  id="exercise-1.4-more-on-vectors-and-functions" class="smaller ">
@@ -3593,7 +3593,7 @@ samples_sd &lt;- sd(samples)</pre></div>
 <ul>
 <li>What is the formula to calculate the area covered by the water lilies on day n? (pen and paper, not in Rstudio!)</li>
 <li>assign days 1 … 10 to variable x (use <code>c()</code> or <code>:</code>). Now assign the fraction of the area covered by water lilies on day n to variable y</li>
-<li>plot x vs y (use the simple <code>plot()</code> function)</li>
+<li>plot x vs y (use the simple <code>plot()</code> function; how do you run it?)</li>
 <li>When will the half of the area be covered by water lilies? Use <code>abline(h=.5)</code> (what does it do?) to show a graphical solution</li>
 <li>What is the fraction on day 3? Hint: what does <code>y[3]</code> do?</li>
 <li>Speaking of which, what does <code>y[4:5]</code> do? (just try it!)</li>

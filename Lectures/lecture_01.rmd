@@ -43,6 +43,8 @@ knitr::opts_chunk$set(echo=FALSE,warning=FALSE,message=FALSE,fig.width=5,fig.hei
     * run simple statistical analysis (t-test, non-parametric tests, basic ANOVA, basic linear regression) 
     * create reports from your analysis in a number of formats
 
+ * I try to avoid teaching you *programming in R* as such, it is more data
+   science with R. However, some programming concepts are unavoidable.
  * Give you good habits
  * Proceed along a helix
 
@@ -233,7 +235,7 @@ students[sel] <- c("Arthur", "Beate")
 ## Factors
 
 Some variables are factors. Factors look almost like strings, but they have a
-slightly different behavior. Sometimes factor behave like numbers.
+slightly different behavior. Sometimes factors behave like numbers.
 
 In statistics, factors play an important role.
 
@@ -350,7 +352,7 @@ much area as the previous day. On the first day, the water lilies cover
    day n? (pen and paper, not in Rstudio!)
  * assign days 1 ... 10 to variable x (use `c()` or `:`). Now assign the fraction of the area
    covered by water lilies on day n to variable y
- * plot x vs y (use the simple `plot()` function)
+ * plot x vs y (use the simple `plot()` function; how do you run it?)
  * When will the half of the area be covered by water lilies? Use `abline(h=.5)`
    (what does it do?) to show a graphical solution
  * What is the fraction on day 3? Hint: what does `y[3]` do?

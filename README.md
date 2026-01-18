@@ -18,6 +18,7 @@ To view HTML files, use the links below.
 
 # Day 1: Introduction to R and RStudio
 
+ * [Questionnaire for Day 1](https://forms.gle/wKuDzs4UWcWr9ka86)
  * Course materials - "5 days of R", [day 1](https://bihealth.github.io/RCrashcourse-book/day1-intro-to-r.html)
  * [Lecture 1](https://bihealth.github.io/Rcrashcourse/Lectures/lecture_01.html)
  * [Video: introduction to working with Rstudio, 11 minutes](https://youtu.be/zWt8BC1UNiQ)
