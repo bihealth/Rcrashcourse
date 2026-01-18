@@ -27,15 +27,7 @@ knitr::opts_chunk$set(echo=FALSE,warning=FALSE,message=FALSE,fig.width=5,fig.hei
 
 ![](images/team_112021.png){ height=400px }
 
-## Getting to know you
-
-![](images/courseMember_202403.png){ height=400px }
-
 ## Aims
-
- * R for data science (Hadley Wickham)
- 
-![](images/data-science.png){ width=600px }
 
  * Give you a jump start to 
     * exchange data between R and spreadsheet programs such as Excel
@@ -47,7 +39,6 @@ knitr::opts_chunk$set(echo=FALSE,warning=FALSE,message=FALSE,fig.width=5,fig.hei
    science with R. However, some programming concepts are unavoidable.
  * Give you good habits
  * Proceed along a helix
-
 
 ## Important links 
 
@@ -62,6 +53,12 @@ To view the lectures, click on the link.
 * Introducing RStudio as environment for developing your own programs
 * Concepts on good coding practice
 * Language basics of R (variables, operators, functions ...)
+
+## Getting to know you
+
+ * Please fill out the survey: [https://forms.gle/roMmixnZHsmbi47x7](https://forms.gle/roMmixnZHsmbi47x7)
+ * Please introduce yourself
+
 
 # How to start
 
