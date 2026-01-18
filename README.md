@@ -9,4 +9,4 @@ Details to follow, in the meanwhile, take a look a the
 # Day 1: Introduction to R and RStudio
 
  * Course materials - "5 days of R", [day 1](https://bihealth.github.io/RCrashcourse-book/day1-intro-to-r.html)
- * [Lecture 1](https://bihealth.github.io/RCrashcourse/Lectures/lecture1.html)
+ * [Lecture 1](https://bihealth.github.io/Rcrashcourse/Lectures/lecture1.html)
