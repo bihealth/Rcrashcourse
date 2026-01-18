@@ -3,15 +3,18 @@ title: "R Crash course / 01"
 author: ""
 date: "`r Sys.Date()`"
 output:
-  ioslides_presentation: default
-abstract: |
-
+  ioslides_presentation: 
+    widescreen: true
+    smaller: true
+    css: files/style.css
+    logo: files/logo_bihealth_en.png
 toc: no
+abstract: |
 ---
 
 ```{r,echo=FALSE}
 ## Set default options for the knitr RMD processing
-knitr::opts_chunk$set(echo=FALSE,warning=FALSE,message=FALSE,fig.width=5,fig.height=5,cache=TRUE,autodep=TRUE, results="hide")
+knitr::opts_chunk$set(echo=FALSE,warning=FALSE,message=FALSE,fig.width=5,fig.height=5,cache=FALSE,autodep=TRUE, results="hide")
 ```
 
 ```{r libraries,cache=FALSE}
@@ -19,57 +22,77 @@ knitr::opts_chunk$set(echo=FALSE,warning=FALSE,message=FALSE,fig.width=5,fig.hei
 
 # R crash course
 
-## Data
-
-![](images/selfie.jpg)
+## The Team
 
 
+![](images/team_112021.png){ height=400px }
 
-January Weiner <january.weiner@bihealth.de>
+## Getting to know you
 
-## Course files
-
-```{r}
-library(qrcode)
-plot(qr_code("https://github.com/bihealth/Rcrashcourse/"))
-```
-
-
-Course repository: https://github.com/bihealth/Rcrashcourse
-
-To view the lectures, download the HTML file and open it in a browser, or
-click on the link.
-
-## Course book
-
-```{r}
-library(qrcode)
-plot(qr_code("https://bihealth.github.io/RCrashcourse-book/"))
-```
-
-
-Course book: https://bihealth.github.io/RCrashcourse-book/
+![](images/courseMember_202403.png){ height=400px }
 
 ## Aims
 
- * Give you a jump start
+ * R for data science (Hadley Wickham)
+ 
+![](images/data-science.png){ width=600px }
+
+ * Give you a jump start to 
+    * exchange data between R and spreadsheet programs such as Excel
+    * manipulate and display the data
+    * run simple statistical analysis (t-test, non-parametric tests, basic ANOVA, basic linear regression) 
+    * create reports from your analysis in a number of formats
+
  * Give you good habits
+ * Proceed along a helix
+
+
+## Important links 
+
+ * E-mail: `<cubi-teaching@charite.de>` 
+ * Github: `https://github.com/bihealth/Rcrashcourse`
+ * Teams
+
+To view the lectures, click on the link.
+
+## Aims for today
+
+* Introducing RStudio as environment for developing your own programs
+* Concepts on good coding practice
+* Language basics of R (variables, operators, functions ...)
 
 # How to start
 
-## Examples of R applications
-
- * Why programming?
- * Why R?
- * Alternatives: Python, matlab, other statistical languages
-
 ## Example R session
+
+`https://youtu.be/zWt8BC1UNiQ`
 
 ## The rdesktop workplace
 
  * Windows
  * Menus
  * Workspace
+
+## Creating a new project
+
+ * In Rstudio, go to File -> New Project 
+ * When the dialog window appears, select New Directory -> New Project
+
+A project is not a file – but a directory which contains all relevant files
+(scripts, documentation, Excel files with the source data, exported
+documents...). You can put anything in this directory.
+
+It is a very good idea to save all data and meta-data related to your
+project in this directory.
+
+## Exercise 0: Create a new project
+
+Now create a new project in Rstudio. 
+
+ * Go to File -> New Project
+ * Select New Directory -> New Project
+ * Give the project a name (e.g. "RcrashCourse")
+ * Click on "Create Project"
 
 ## Workspaces
 
@@ -82,45 +105,149 @@ Course book: https://bihealth.github.io/RCrashcourse-book/
     variables created)
   * `<filename>.Rproj` – Rstudio R project file containing some
     rstudio-specific settings (text file)
-  * Anything else should be save by you
+  * Anything else should be saved by you
+
+
+## When things don't work...
+
+![Error 1](images/error_01.png)
+
+![Error 2](images/error_02.png)
+
+ * Don't panic!
+
+ * Do not ignore error messages. Very often, they tell you exactly what the
+   problem is.
+
+ * Google it! Or use ChatGPT ...
+
+
+## Examples of R applications
+
+ * Why programming?
+ * Why R?
+ * Alternatives: Python, matlab, other statistical languages
 
 ## A few notes on R
 
  * R vs matlab
  * "There is more than one way of doing it" (but one way will usually be
    optimal)
- * Tidyverse vs standard R
- * ggplot vs basic plots
+ * Tidyverse vs standard R (demo)
+ * ggplot vs basic plots (demo)
 
 # R language basics
 
-## R language basics
+## R language basics (demo)
 
- * Assignment and variables
- * vectors and multiple assignment
- * operators
- * functions
 
-## Excercises 1
+```{r echo=TRUE}
+## Anything starting with a '#' is a comment
+## Assignment and creating variables 
 
- * create variables: a string, a number, a factor
- * create a factor variable 
+a <- 2
+name <- "January"
+
+## vectors and multiple assignment 
+
+a <- c(1, 7, 9)
+
+## operators 
+
+a <- 3 + 5 
+b <- a * 7
+
+## functions 
+
+sum(c(1, 2, 3))
+i <- length(a)
+```
+
+Try it out!
+
+## Exercises 1.1 Creating variables
+
+ create variables: a string, a number, a factor
+
+   * create a string variable called "teacher" containing the word "manuela"
+   * create a string variable called "teachers" containing two values:
+     "manuela" and "january"
+  * what does `1:5` do?
+  * create a variable containing numbers from 1 to 10
+
+Note: play with the computer, try out things
+
+## Exercises 1.2 Vectorization
+
+  * what happens when you add a number to a vector? (i.e. `c(3, 1, 4) + 5`)
+  * what happens when you multiply a vector with a number?
+  * add vector `c(1, 2, 5)` and vector `c(10, 20, 30)`. What happens?
+  * type `length(teacher)`; type `length(teachers)`; what are the results?
+  * type `pi`. What happens?
+  * say, you have three values which are the diameters of three circles: 1,
+    5 and 13. You would like to have a vector containing the areas of these
+    circles. What is the simplest way of doing that?
+
+## Exercises 1.2(b) Extra: recycling
+
+(Extra exercise: only if you are bored!)
+
+```{r eval=FALSE,echo=TRUE}
+vec1 <- 1:10
+vec2 <- 20:30
+
+vec1 + vec2
+```
+
+This produces a warning message. Should you be worried? What happened?
+
+What does the `length()` function do?
+
+## Comment: vectorization
+
+In R, a lot of things are vectors and this is very convenient. 
+
+If you assign a value to a variable: `counter <- 5` you are in fact
+creating a vector of length 1.
+
+## Exercise 1.3: Selecting elements from vectors
+
+ * Type `teachers[1]`. Now type `teachers[2]`. What happens?
+
+ * Now type the following. What exactly is happening here?
+
+```{r eval=FALSE,echo=TRUE}
+students <- c("Anna", "Bernie", "Claudia", "David")
+sel <- c(1, 2)
+
+students[sel]
+students[sel] <- c("Arthur", "Beate")
+```
+
+ * What would `students[1:3]` do and why?
+ * Can you do `students[c(3, 1)]`? What happens?
  
+ * What happens when you do `students[-1]`? What does that `-` sign seem to
+   do?
 
-## Excercises 2 
+## Factors
 
-there is a lake in a garden. Every day, the water lilies cover twice as
-much area as the previous day. On the first day, the water lilies cover
-1/100th of the area of the lake.
+Some variables are factors. Factors look almost like strings, but they have a
+slightly different behavior. Sometimes factor behave like numbers.
 
- * What is the formula to calculate the area covered by the water lilies on
-   day n?
- * assign days 1 ... 10 to variable x. Now assign the fraction of the area
-   covered by water lilies on day n to variable y
- * plot x vs y
- * When will the half of the area be covered by water lilies? Use `abline`
-   (what does it do?) to show a graphical solution
- 
+In statistics, factors play an important role.
+
+**You don't have to learn about factors yet, but you should know that they
+exist.**
+
+
+```{r eval=FALSE,echo=TRUE}
+f_teachers <- factor(teachers)
+as.numeric(f_teachers)
+as.character(f_teachers)
+```
+
+
 # Good coding practices
 
 ## Remember: language is communication
@@ -129,39 +256,6 @@ much area as the previous day. On the first day, the water lilies cover
  * And this is a good thing!
  * Documentation *is* important
  * Reproducibility matters
-
-
-## Literate programming
-
-![Donald E. Knuth](images/knuth.jpg)
-
-
-## Literate programming
-
-I believe that the time is ripe for significantly better documentation
-of programs, and that we can best achieve this by considering
-programs to be works of literature. Hence, my title: “Literate
-Programming.”
-
-Let us change our traditional attitude to the construction of
-programs: Instead of imagining that our main task is to instruct a
-computer what to do, let us concentrate rather on explaining to
-human beings what we want a computer to do.
-
-(Donald E. Knuth)
-
-## Literate programming
-
-The practitioner of literate programming can be regarded as an
-essayist, whose main concern is with exposition and excellence of
-style. Such an author, with thesaurus in hand, chooses the names of
-variables carefully and explains what each variable means. He or she
-strives for a program that is comprehensible because its concepts
-have been introduced in an order that is best for human
-understanding, using a mixture of formal and informal methods that
-reinforce each other.
-
-(Donald E. Knuth)
 
 ## Documenting your code
 
@@ -174,51 +268,102 @@ reinforce each other.
 
 Keep your code clean:
 
- * be consistent!
+ * be consistent
  * use meaningful variable and function names
  * don't use shorthands
- * refactorize
- * create distinct code chunks
  * split the code into meaningful scripts
  * use a formatting style and stick to it
 
 E.g.
 http://web.stanford.edu/class/cs109l/unrestricted/resources/google-style.html
 
-## Simplify!
 
- * make your code as simple as possible
- * make your functions versatile and simple
- * use simple data types if possible
- * don't overdo it!
+## Examples
 
-## You never know
+<div style="float: left; width: 35%;">
+### Bad:
 
- * what your code evolves into
- * when you will need to publish it
- * when someone will want to see it
+```{r eval=FALSE,echo=TRUE}
+a <- 5
 
-…so prepare in advance!
- 
- 
+b <- c(1,10, 
+20, 21, 5)
 
-## Functions
-
- * If you have to write something more than twice, you should turn it into
-   a function!
- * R is a *functional* language
-
-## Creating a function
+r<-sqrt(sum((b-mean(b))^2)/a)
 
 ```
-#' Function name
-#' Function description
-some_name <- function(param1, param2=2) {
 
-## code comment
-<your code goes in here>
+</div>
 
-}
+<div style="float: right; width: 5%;">
 
+</div>
+
+<div style="float: right; width: 60%;">
+### Better:
+
+```{r eval=FALSE,echo=TRUE}
+## Calculating the standard deviation of a sample
+
+# example values for five samples
+samples   <- c(1, 10, 20, 21, 5)
+samples_n <- length(samples)
+
+# calculate standard deviation of samples manually
+samples_mean <- mean(samples)
+samples_devs <- samples - samples_mean
+
+# samples variance
+samples_var  <- sum(samples_devs^2) / (samples_n - 1)
+
+samples_sd   <- sqrt(samples_var)
+
+# alternative: use the built-in function
+samples_sd <- sd(samples)
 
 ```
+
+</div>
+
+## Introducing functions (look ahead for day 2)
+
+ * Everything in R is a function. It takes a certain number of parameters
+   and returns exactly one value (which may be a vector or something else)
+ * Some special functions are *operators*, like `+` or `-`
+ * Values can be assigned to variables (e.g. `a <- 2`).
+ * There are different types of values, including vectors. There are
+   numeric, character, logical and factor vectors.
+   
+
+**Demo**
+
+ * `https://youtu.be/rnGADz4cuBA` (Functions, 6 minutes)
+ * `https://youtu.be/NTnLZQwKhvA` (defining functions, 7 minutes)
+
+## Exercise 1.4 More on vectors (and functions)
+
+There is a lake in a garden. Every day, the water lilies cover twice as
+much area as the previous day. On the first day, the water lilies cover
+1/100th of the area of the lake.
+
+ * What is the formula to calculate the area covered by the water lilies on
+   day n? (pen and paper, not in Rstudio!)
+ * assign days 1 ... 10 to variable x (use `c()` or `:`). Now assign the fraction of the area
+   covered by water lilies on day n to variable y
+ * plot x vs y (use the simple `plot()` function)
+ * When will the half of the area be covered by water lilies? Use `abline(h=.5)`
+   (what does it do?) to show a graphical solution
+ * What is the fraction on day 3? Hint: what does `y[3]` do?
+ * Speaking of which, what does `y[4:5]` do? (just try it!)
+ 
+
+## Exercise 2.2: More on plotting
+
+ * Make the plot yourself.
+ * use 'col' parameter of `plot` and a color name (e.g. "red") to change
+   the color of the line (`plot(..., col="red")`)
+ * what if each day the lilies cover a fraction of area that is 1.5 the
+   fraction of area on the previous day?
+ * Use `lines(x, y)` function to put a second line on the plot
+ * For more experienced users: Create a Rmarkdown.
+

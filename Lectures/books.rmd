@@ -4,7 +4,7 @@ author: "January Weiner"
 output: html_document
 ---
 
-Books which I have shown you during the course:
+Books which might be of interest:
 
  1. R Cookbook by Paul Teetor
 
@@ -12,9 +12,38 @@ Books which I have shown you during the course:
 
  3. The R Book by Michael J. Crawley – a great guide to statistics with R
 
- 3. Datendesign mit R by Thomas Rahlf (in German, available
-    [online](https://download.e-bookshelf.de/download/0000/8627/47/L-G-0000862747-0002952526.pdf))
-
  4. Visual Display of Quantitative Information by Edward Tufte: a beautiful
     book discussing principles of data presentation.
 
+ 5. Datendesign mit R by Thomas Rahlf
+
+
+Suggested Links:
+
+ 1. Cheat sheets:
+   * [R cheat sheet](https://rstudio.github.io/cheatsheets/base-r.pdf)
+   * [RStudio](https://rstudio.github.io/cheatsheets/rstudio-ide.pdf)
+   * [ggplot2](https://rstudio.github.io/cheatsheets/data-visualization.pdf)
+
+ 2. R markdown:
+  
+   * [R markdown definitive guide](https://bookdown.org/yihui/rmarkdown/)
+   * [Tables in Rmarkdown](https://rstudio.github.io/distill/tables.html)
+ 
+ 3. Stackexchange:
+
+   * [StackOverflow](https://stackoverflow.com)
+   * [CrossValidated](https://stats.stackexchange.com)
+ 
+ 4. [Statistical tools for high throughput data analysis](https://sthda.com)
+
+ 5. [R-bloggers](https://www.r-bloggers.com/)
+ 6. [Collection of R-statistics](http://r-statistics.co/)
+ 7. [R cookbook](http://www.cookbook-r.com/)   
+ 8. Regular expressions:
+    
+    * [Test regexp](https://regexr.com)
+    * [R cheat sheet](https://rstudio.github.io/cheatsheets/regex.pdf)
+    
+ 9. [R for data science](https://r4ds.had.co.nz)
+ 10. [Style guide](https://style.tidyverse.org/index.html)
