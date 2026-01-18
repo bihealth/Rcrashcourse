@@ -60,13 +60,20 @@ To view the lectures, click on the link.
  * Please introduce yourself
 
 
+## A few rules 
+
+ * Ask questions! (don't ask if you may ask questions...)
+ * Interrupt me!
+ * If you are confused, say so immediately!
+ * The slides are to structure our day, but use the book as reference
+
 # How to start
 
 ## Example R session
 
 `https://youtu.be/zWt8BC1UNiQ`
 
-## The rdesktop workplace
+## The RStudio environment
 
  * Windows
  * Menus
@@ -93,9 +100,9 @@ Now create a new project in Rstudio.
  * Give the project a name (e.g. "RcrashCourse")
  * Click on "Create Project"
 
-## Workspaces
+## Projects
 
- Workspace is basically a folder which contains a few special files in
+ A project is basically a folder which contains a few special files in
  which R stores project-specific data.
 
   * `Rhistory` (hidden file) – a text file containing all commands that you
@@ -136,6 +143,23 @@ Now create a new project in Rstudio.
  * ggplot vs basic plots (demo)
 
 # R language basics
+
+## Using R as a calculator (demo)
+
+## Exercise 1.0: Basic calculations
+
+Calculate the following expressions in R:
+
+ * $\log_{2}(8)$
+ * $\sin(\pi)$
+ * $2^{10}$
+ * $\sqrt{e}$
+
+## Using R scripts
+
+ * You should almost never use the console
+ * Instead, create R scripts (File -> New File -> R Script)
+ * Do that now!
 
 ## R language basics (demo)
 
