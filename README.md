@@ -24,6 +24,7 @@ To view HTML files, use the links below.
  * [Video: introduction to working with Rstudio, 11 minutes](https://youtu.be/zWt8BC1UNiQ)
  * [Video: introduction to functions, 5 minutes](https://youtu.be/rnGADz4cuBA)
  * [Video (extra): functions as values, 6 minutes](https://youtu.be/NTnLZQwKhvA)
+ * [Scripts for Day 1](https://github.com/bihealth/Rcrashcourse/blob/main/Scripts/day1_script.R)
 
 # Day 2: Complex Data Structures; Reading data; diagnosing data problems
 
