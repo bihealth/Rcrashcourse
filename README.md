@@ -16,7 +16,7 @@ HTML source.
 
 To view HTML files, use the links below.
 
-# Day 1: Introduction to R and RStudio
+# Day 1: Introduction to R and RStudio; simple data types; selecting vectors
 
  * [Questionnaire for Day 1](https://forms.gle/wKuDzs4UWcWr9ka86)
  * Course materials - "5 days of R", [day 1](https://bihealth.github.io/RCrashcourse-book/day1-intro-to-r.html)
@@ -25,7 +25,10 @@ To view HTML files, use the links below.
  * [Video: introduction to functions, 5 minutes](https://youtu.be/rnGADz4cuBA)
  * [Video (extra): functions as values, 6 minutes](https://youtu.be/NTnLZQwKhvA)
 
-# Day 2: Complex Data Structures
+# Day 2: Complex Data Structures; Reading data; diagnosing data problems
 
  * Course materials - "5 days of R", [day 1](https://bihealth.github.io/RCrashcourse-book/day2-complex-structures.html)
  * [Lecture 2](https://bihealth.github.io/Rcrashcourse/Lectures/lecture_02.html)
+ * [Video: using logical vectors for selecting elements, 8 minutes](https://youtu.be/xmeZofFlp78)
+ * [Video: tibbles vs data frames, 10 minutes](https://youtu.be/eWu7kvNBpyc)
+
