@@ -31,7 +31,11 @@ knitr::opts_chunk$set(echo=FALSE,warning=FALSE,message=FALSE,fig.width=5,fig.hei
    If you have internet connection, but your R reports that you cannot
    connect to CRAN, the cause may be the Charite firewall.
 
-     * Change proxy settings as follows:
+     * Change proxy settings as follows, in your R session:
+
+     ```
+     Sys.setenv("HTTPS_PROXY"="http://proxy.charite.de:8080")
+     ```
 
  * The binary packages for your version of R are not yet available.
 
