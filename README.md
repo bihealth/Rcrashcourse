@@ -25,3 +25,7 @@ To view HTML files, use the links below.
  * [Video: introduction to functions, 5 minutes](https://youtu.be/rnGADz4cuBA)
  * [Video (extra): functions as values, 6 minutes](https://youtu.be/NTnLZQwKhvA)
 
+# Day 2: Complex Data Structures
+
+ * Course materials - "5 days of R", [day 1](https://bihealth.github.io/RCrashcourse-book/day2-complex-structures.html)
+ * [Lecture 2](https://bihealth.github.io/Rcrashcourse/Lectures/lecture_02.html)
