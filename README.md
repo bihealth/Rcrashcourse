@@ -28,8 +28,17 @@ To view HTML files, use the links below.
 
 # Day 2: Complex Data Structures; Reading data; diagnosing data problems
 
- * Course materials - "5 days of R", [day 1](https://bihealth.github.io/RCrashcourse-book/day2-complex-structures.html)
+ * Course materials - "5 days of R", [day 2](https://bihealth.github.io/RCrashcourse-book/day2-complex-structures.html)
  * [Lecture 2](https://bihealth.github.io/Rcrashcourse/Lectures/lecture_02.html)
  * [Video: using logical vectors for selecting elements, 8 minutes](https://youtu.be/xmeZofFlp78)
  * [Video: tibbles vs data frames, 10 minutes](https://youtu.be/eWu7kvNBpyc)
+ * [Scripts for Day 2](https://github.com/bihealth/Rcrashcourse/blob/main/Scripts/day2_script.R)
+
+# Day 3: Reading and cleaning data; reshaping data frames
+
+ * [Lecture 3](https://bihealth.github.io/RCrashCourse2023/Lectures/lecture_03.html): Reading and cleaning data; reshaping data frames
+ * [Video: wide vs long format, 9 minutes](https://youtu.be/NO1gaeJ7wtA)
+ * [Video: converting from wide to long, 6 minutes](https://youtu.be/v5Y_yrnkWIU)
+ * [Video: converting from long to wide, 4 minutes](https://youtu.be/jN0CI62WKs8)
+ * [Video: introduction to regular expressions, 15 minutes](https://youtu.be/ukN59iCo5wc)
 

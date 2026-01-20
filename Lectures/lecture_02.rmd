@@ -27,6 +27,7 @@ knitr::opts_chunk$set(echo=TRUE,eval=FALSE,warning=FALSE,message=FALSE,fig.width
 
 Questions, anybody?
 
+
 ## One more thing about vectors: named indices
 
 Elements of a vector can be accessed not only using numbers (indices) or
@@ -120,7 +121,7 @@ persons[ c(T, F, T, T, T) ]
 Create a vector as follows:
 
 ```{r echo=TRUE,eval=FALSE}
-samples <- c(1, 10, NA, 15)
+samples <- c(1, 10, NA, 15, NA)
 ```
 
 `NA` stands for `not available` (e.g., missing data)
@@ -133,7 +134,7 @@ samples <- c(1, 10, NA, 15)
  * what does the `is.na()` function return when applied to `samples`?
  * how do you find `NA` values? Try `is.na` and `which`
  * How do you select only these samples which are not `NA`?
- * Back to the lilies - how would you change all values which are greater than 1 to 1?
+ * How do you change all NA values to zero?
  
 ## Extra (if you are bored): Creating a function
 
@@ -205,7 +206,8 @@ Exercise: using rep and paste, create a vector like this: `A1, A2, A3, B1, B2, B
 
 ## Matrices
 
-Much like vectors, matrices can only hold one data type (e.g. only numeric
+Much like vectors, matrices (and arrays, which are multidimensional
+matrices) can only hold one data type (e.g. only numeric
 or only character or only logical etc.).
 
 ```{r}
