@@ -70,25 +70,62 @@ tidyverse functions above are preferable.
  * For reading Excel files, use the `readxl` package: `library(readxl)`.
    Then, use the function `read_excel`.
 
+## Exercise 3.0: reading your first file
+
+ * Check your working directory using getwd()
+ * Load the tidyverse package using library(tidyverse)
+ * Go to the URL https://github.com/bihealth/RCrashcourse-book/Datasets
+ * Click on “iris.csv”
+ * Click on the “Download raw file” button on the right side of the screen
+ * Save the file in the directory returned by getwd()
+ * Read the file using `read_csv("iris.csv")`
+
 ## Where are your files - absolute vs relative paths
 
+(remember, "directory" is just an older word for "folder")
+
  * absolute path start at root directory, e.g.  
- `C:\Users\mbenary_c\CUBI\teaching\202403_RCrashCourse\lecture01.R`
- 
- * start at the working directory `lecture01.R`
+ `C:/Users/foobar/CUBI/teaching/202403_RCrashCourse/lecture01.R`
+ * Note the slash (`/`) instead of backslash (`\`). 
  * Where am I? - `getwd()`
- 
+ * relative paths start at working directory, e.g. 
+ `Datasets/iris.csv`
  * Downloading files from our git-repository
+
+## IMPORTANT!
+
+*Do not with absolute paths!*
+
+Absolute paths are system-dependent and will break your code
+when you move to another computer or share your code with others.
+
+(Exeptions apply, but only very rarely - e.g. when working with system files or
+HPC files installed for all users)
+
+## Exercise 3.0b: relative paths
+
+ * Create a subdirectory `Datasets` in your working directory
+ * Move the file `iris.csv` into this subdirectory (using your file manager)
+ * Read the file using a relative path
+
+## Exercise 3.0c: using Rstudio to read files
+
+ * In Rstudio, use the menu `File -> Import Dataset -> From Text (readr)...`
+ * Select the file `iris.csv` from your `Datasets` subdirectory
+ * Click on "Import"
+ * What code did Rstudio generate for you?
 
 ## Exercise 3.1
 
-Read, inspect the following files:
+Download the following files into your "Datasets" subdirectory:
 
  * `TB_ORD_Gambia_Sutherland_biochemicals.csv`
  * `iris.csv`
  * `meta_data_botched.xlsx` 
 
-Which functions would you use? 
+Which functions would you use? Go ahead, try them.
+
+## Exercise 3.1b
  
 The function `readxl_example("deaths.xls")` returns a file name. Read this file: 
 
@@ -112,8 +149,8 @@ returns a tibble, while `dataframe[ , 1]` returns a vector. The second
 crucial difference is that it does not support row names (on purpose!).
 
 
-
 # Cleaning data
+
 ## A short note on organizing your data
 
  * If possible, use a specialized tool and not Excel (a database,

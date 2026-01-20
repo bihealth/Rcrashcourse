@@ -3349,18 +3349,58 @@ background: #70ACC0;
 <li>For reading Excel files, use the <code>readxl</code> package: <code>library(readxl)</code>. Then, use the function <code>read_excel</code>.</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Where are your files - absolute vs relative paths</h2></hgroup><article  id="where-are-your-files---absolute-vs-relative-paths" class="smaller ">
+</article></slide><slide class=""><hgroup><h2>Exercise 3.0: reading your first file</h2></hgroup><article  id="exercise-3.0-reading-your-first-file" class="smaller ">
 
 <ul>
-<li><p>absolute path start at root directory, e.g.<br/><code>C:\Users\mbenary_c\CUBI\teaching\202403_RCrashCourse\lecture01.R</code></p></li>
-<li><p>start at the working directory <code>lecture01.R</code></p></li>
-<li><p>Where am I? - <code>getwd()</code></p></li>
-<li><p>Downloading files from our git-repository</p></li>
+<li>Check your working directory using getwd()</li>
+<li>Load the tidyverse package using library(tidyverse)</li>
+<li>Go to the URL <a href='https://github.com/bihealth/RCrashcourse-book/Datasets' title=''>https://github.com/bihealth/RCrashcourse-book/Datasets</a></li>
+<li>Click on &ldquo;iris.csv&rdquo;</li>
+<li>Click on the &ldquo;Download raw file&rdquo; button on the right side of the screen</li>
+<li>Save the file in the directory returned by getwd()</li>
+<li>Read the file using <code>read_csv(&quot;iris.csv&quot;)</code></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Where are your files - absolute vs relative paths</h2></hgroup><article  id="where-are-your-files---absolute-vs-relative-paths" class="smaller ">
+
+<p>(remember, &ldquo;directory&rdquo; is just an older word for &ldquo;folder&rdquo;)</p>
+
+<ul>
+<li>absolute path start at root directory, e.g.<br/><code>C:/Users/foobar/CUBI/teaching/202403_RCrashCourse/lecture01.R</code></li>
+<li>Note the slash (<code>/</code>) instead of backslash (<code>\</code>).</li>
+<li>Where am I? - <code>getwd()</code></li>
+<li>relative paths start at working directory, e.g.  <code>Datasets/iris.csv</code></li>
+<li>Downloading files from our git-repository</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>IMPORTANT!</h2></hgroup><article  id="important" class="smaller ">
+
+<p><em>Do not with absolute paths!</em></p>
+
+<p>Absolute paths are system-dependent and will break your code when you move to another computer or share your code with others.</p>
+
+<p>(Exeptions apply, but only very rarely - e.g. when working with system files or HPC files installed for all users)</p>
+
+</article></slide><slide class=""><hgroup><h2>Exercise 3.0b: relative paths</h2></hgroup><article  id="exercise-3.0b-relative-paths" class="smaller ">
+
+<ul>
+<li>Create a subdirectory <code>Datasets</code> in your working directory</li>
+<li>Move the file <code>iris.csv</code> into this subdirectory (using your file manager)</li>
+<li>Read the file using a relative path</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Exercise 3.0c: using Rstudio to read files</h2></hgroup><article  id="exercise-3.0c-using-rstudio-to-read-files" class="smaller ">
+
+<ul>
+<li>In Rstudio, use the menu <code>File -&gt; Import Dataset -&gt; From Text (readr)...</code></li>
+<li>Select the file <code>iris.csv</code> from your <code>Datasets</code> subdirectory</li>
+<li>Click on &ldquo;Import&rdquo;</li>
+<li>What code did Rstudio generate for you?</li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Exercise 3.1</h2></hgroup><article  id="exercise-3.1" class="smaller ">
 
-<p>Read, inspect the following files:</p>
+<p>Download the following files into your &ldquo;Datasets&rdquo; subdirectory:</p>
 
 <ul>
 <li><code>TB_ORD_Gambia_Sutherland_biochemicals.csv</code></li>
@@ -3368,7 +3408,9 @@ background: #70ACC0;
 <li><code>meta_data_botched.xlsx</code></li>
 </ul>
 
-<p>Which functions would you use?</p>
+<p>Which functions would you use? Go ahead, try them.</p>
+
+</article></slide><slide class=""><hgroup><h2>Exercise 3.1b</h2></hgroup><article  id="exercise-3.1b" class="smaller ">
 
 <p>The function <code>readxl_example(&quot;deaths.xls&quot;)</code> returns a file name. Read this file:</p>
 
