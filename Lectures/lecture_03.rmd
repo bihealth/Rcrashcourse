@@ -284,6 +284,16 @@ library(colorDF)
 summary_colorDF(myiris)
 ```
 
+## Diagnosing problems
+
+Another useful package is `skimr`, which provides a function
+`skim` which provides a summary of each column:
+
+```{r eval=FALSE,results="markdown"}
+library(skimr)
+skim(myiris)
+```
+
 ## Exercise 3.2: Diagnosing problems
 
  * Read the data file `iris.csv` using the `read_csv` function. Spot the
