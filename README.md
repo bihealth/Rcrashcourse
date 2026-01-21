@@ -37,7 +37,7 @@ To view HTML files, use the links below.
 # Day 3: Reading and cleaning data; reshaping data frames
 
  * Course materials - "5 days of R", [day 3](https://bihealth.github.io/RCrashcourse-book/day3-reading-your-data.html)
- * [Lecture 3](https://bihealth.github.io/RCrashCourse2023/Lectures/lecture_03.html): Reading and cleaning data; reshaping data frames
+ * [Lecture 3](https://bihealth.github.io/Rcrashcourse/Lectures/lecture_03.html): Reading and cleaning data; reshaping data frames
  * [Video: wide vs long format, 9 minutes](https://youtu.be/NO1gaeJ7wtA)
  * [Video: converting from wide to long, 6 minutes](https://youtu.be/v5Y_yrnkWIU)
  * [Video: converting from long to wide, 4 minutes](https://youtu.be/jN0CI62WKs8)
