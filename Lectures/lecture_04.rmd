@@ -20,7 +20,7 @@ knitr::opts_knit$set(root.dir = "../")
 library(readxl)
 library(beeswarm)
 library(tidyverse)
-library(sm)
+#library(sm)
 library(zoo)
 library(RColorBrewer)
 ```
@@ -478,15 +478,13 @@ the identifiers by which to join. It is always safer to specify this
 parameter!
 
 ```{r}
-df1 <- data.frame(ID=c("a", "a", "b", "c"), no=c(1, 2, 3, 4), 
+df1 <- data.frame(ID=c("a", "a", "b", "c"), visit=c(1, 2, 1, 1), 
   value=rnorm(4))
-df2 <- data.frame(ID=c("a", "a", "b", "c"), no=c(1, 2, 3, 4), 
+df2 <- data.frame(ID=c("a", "a", "b", "c"), visit=c(1, 2, 1, 1), 
   value=rnorm(4))
 merge(df1, df2)           ## not what we wanted
 merge(df1, df2, by="ID")  ## not what we wanted
-merge(df1, df2, by=c("ID", "no"))
-
-inner_join(df1, df2, by = c("ID", "no")) # tidyverse option
+merge(df1, df2, by=c("ID", "visit"))
 ```
 
 ## Merging (cont.)
@@ -495,9 +493,9 @@ A simpler (but requiring more steps) alternative would be to make a new
 identifier:
 
 ```{r}
-df1$ID2 <- paste(df1$ID, df1$no, sep=".")
-df2$ID2 <- paste(df2$ID, df2$no, sep=".")
-merge(df1, df2, by="ID2")
+df1$ID_visit <- paste(df1$ID, df1$visit, sep=".")
+df2$ID_visit <- paste(df2$ID, df2$visit, sep=".")
+merge(df1, df2, by="ID_visit")
 ```
 
 ## Another example
