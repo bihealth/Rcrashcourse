@@ -34,12 +34,17 @@ To view HTML files, use the links below.
  * [Video: tibbles vs data frames, 10 minutes](https://youtu.be/eWu7kvNBpyc)
  * [Scripts for Day 2](https://github.com/bihealth/Rcrashcourse/blob/main/Scripts/day2_script.R)
 
-# Day 3: Reading and cleaning data; reshaping data frames
+# Day 3: Reading, cleaning and writing data
 
  * Course materials - "5 days of R", [day 3](https://bihealth.github.io/RCrashcourse-book/day3-reading-your-data.html)
  * [Lecture 3](https://bihealth.github.io/Rcrashcourse/Lectures/lecture_03.html): Reading and cleaning data; reshaping data frames
+ * [Video: introduction to regular expressions, 15 minutes](https://youtu.be/ukN59iCo5wc)
+
+# Day 4: Reading and cleaning data; reshaping data frames
+
+ * Course materials - "5 days of R", [day 4](https://bihealth.github.io/RCrashcourse-book/day4-manipulating-your-data.html)
+ * [Video: ggplot2 vs base R, 6 min](https://youtu.be/NnxJyCHrUTE)
  * [Video: wide vs long format, 9 minutes](https://youtu.be/NO1gaeJ7wtA)
  * [Video: converting from wide to long, 6 minutes](https://youtu.be/v5Y_yrnkWIU)
  * [Video: converting from long to wide, 4 minutes](https://youtu.be/jN0CI62WKs8)
- * [Video: introduction to regular expressions, 15 minutes](https://youtu.be/ukN59iCo5wc)
 
