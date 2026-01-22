@@ -43,6 +43,7 @@ To view HTML files, use the links below.
 # Day 4: Reading and cleaning data; reshaping data frames
 
  * Course materials - "5 days of R", [day 4](https://bihealth.github.io/RCrashcourse-book/day4-manipulating-your-data.html)
+ * [Lecture 4](https://bihealth.github.io/Rcrashcourse/Lectures/lecture_04.html): Tidyverse; merging data frames
  * [Video: ggplot2 vs base R, 6 min](https://youtu.be/NnxJyCHrUTE)
  * [Video: wide vs long format, 9 minutes](https://youtu.be/NO1gaeJ7wtA)
  * [Video: converting from wide to long, 6 minutes](https://youtu.be/v5Y_yrnkWIU)
