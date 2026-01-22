@@ -1,0 +1,10 @@
+subject,sampleID,sex,condition,measurement
+1,ID000001,M,control,7.9
+1,ID000002,M,cond1,12.3
+1,ID000003,M,cond2,10.7
+2,ID000004,F,control,6.3
+2,ID000005,F,cond1,10.6
+2,ID000006,F,cond2,11.1
+3,ID000007,F,control,9.5
+3,ID000008,F,cond1,13.1
+3,ID000009,F,cond2,13.8
