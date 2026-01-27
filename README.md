@@ -58,6 +58,7 @@ To view HTML files, use the links below.
  * [Video: introduction R markdown, 15 min](https://youtu.be/vBeGakSENi8)
  * [Video: basic document formatting in Rmarkdown documents, 9 minutes](https://youtu.be/rfMTn4NBDkQ)
  * [Video: including references in Rmarkdown documents, 7 min](https://youtu.be/DUG1tEL5kXI)
+ * [Script from Day 5](https://github.com/bihealth/Rcrashcourse/blob/main/Scripts/day5_script.R)
 
 # Further reasources
 
